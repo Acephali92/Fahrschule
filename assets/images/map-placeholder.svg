@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300">
+  <defs>
+    <linearGradient id="mapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e2e8f0"/>
+      <stop offset="100%" style="stop-color:#cbd5e1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="300" fill="url(#mapGrad)"/>
+
+  <!-- Grid lines (street pattern) -->
+  <g stroke="#94a3b8" stroke-width="1" opacity="0.5">
+    <line x1="0" y1="75" x2="600" y2="75"/>
+    <line x1="0" y1="150" x2="600" y2="150"/>
+    <line x1="0" y1="225" x2="600" y2="225"/>
+    <line x1="150" y1="0" x2="150" y2="300"/>
+    <line x1="300" y1="0" x2="300" y2="300"/>
+    <line x1="450" y1="0" x2="450" y2="300"/>
+  </g>
+
+  <!-- Main roads -->
+  <g stroke="#64748b" stroke-width="3" opacity="0.6">
+    <line x1="0" y1="150" x2="600" y2="150"/>
+    <line x1="300" y1="0" x2="300" y2="300"/>
+  </g>
+
+  <!-- Location marker -->
+  <g transform="translate(300, 130)">
+    <!-- Marker shadow -->
+    <ellipse cx="0" cy="35" rx="12" ry="5" fill="#000" opacity="0.2"/>
+    <!-- Marker pin -->
+    <path d="M0-25 C-15-25 -20-10 -20 5 C-20 20 0 35 0 35 C0 35 20 20 20 5 C20-10 15-25 0-25 Z" fill="#2563eb"/>
+    <!-- Marker inner circle -->
+    <circle cx="0" cy="-5" r="8" fill="white"/>
+    <circle cx="0" cy="-5" r="4" fill="#2563eb"/>
+  </g>
+
+  <!-- Address text -->
+  <rect x="150" y="200" width="300" height="60" rx="8" fill="white" opacity="0.95"/>
+  <text x="300" y="225" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" font-weight="600" fill="#1e293b">Fahrschule Dorn</text>
+  <text x="300" y="245" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#64748b">Eberwiesenstraße 5, 79787 Lauchringen</text>
+
+  <!-- Click hint -->
+  <text x="300" y="285" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#2563eb">Klicken für Google Maps</text>
+</svg>
