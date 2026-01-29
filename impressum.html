@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Impressum der Fahrschule Dorn in Lauchringen - Angaben gem. § 5 TMG und § 18 MStV">
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#2563eb">
+    <title>Impressum - Fahrschule Dorn Lauchringen</title>
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232563eb'/><text x='50' y='65' text-anchor='middle' fill='white' font-size='35' font-family='system-ui'>FD</text></svg>" type="image/svg+xml">
+
+    <style>
+        :root {
+            --color-primary-600: #2563eb;
+            --color-primary-700: #1d4ed8;
+            --color-slate-50: #f8fafc;
+            --color-slate-100: #f1f5f9;
+            --color-slate-200: #e2e8f0;
+            --color-slate-300: #cbd5e1;
+            --color-slate-400: #94a3b8;
+            --color-slate-500: #64748b;
+            --color-slate-600: #475569;
+            --color-slate-700: #334155;
+            --color-slate-800: #1e293b;
+            --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-system);
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--color-slate-700);
+            background-color: var(--color-slate-50);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            color: var(--color-primary-600);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--color-primary-700);
+            text-decoration: underline;
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--color-primary-600);
+            outline-offset: 2px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin-inline: auto;
+            padding-inline: 1rem;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--color-slate-100);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .logo:hover {
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-700));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .logo-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .logo-text {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--color-slate-800);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .back-link svg {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 3rem 0;
+        }
+
+        .legal-card {
+            background: white;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-lg);
+            padding: 2.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .legal-card {
+                padding: 1.5rem;
+                border-radius: var(--radius-xl);
+            }
+        }
+
+        .page-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--color-slate-800);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: var(--color-slate-500);
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--color-slate-200);
+        }
+
+        .legal-section {
+            margin-bottom: 2rem;
+        }
+
+        .legal-section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-slate-800);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--color-primary-600);
+            display: inline-block;
+        }
+
+        .legal-section p {
+            margin-bottom: 0.5rem;
+            color: var(--color-slate-600);
+        }
+
+        .legal-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            gap: 0.25rem;
+        }
+
+        .info-box {
+            background: var(--color-slate-50);
+            border-left: 4px solid var(--color-primary-600);
+            padding: 1rem 1.25rem;
+            border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+            margin-top: 1rem;
+        }
+
+        .info-box p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        .link-list {
+            list-style: none;
+            margin-top: 0.75rem;
+        }
+
+        .link-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-slate-200);
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        .footer {
+            position: relative;
+            background: var(--color-slate-800);
+            color: white;
+            padding-top: 4rem;
+            overflow: hidden;
+            margin-top: auto;
+            clear: both;
+        }
+
+        .footer-wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100px;
+            transform: translateY(-99px);
+            z-index: 0;
+        }
+
+        .footer-wave svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .footer-main {
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .footer h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 24px;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            border-radius: 9999px;
+        }
+
+        .footer p {
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        /* Brand Section */
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-brand .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-brand .logo-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            color: white;
+        }
+
+        .footer-brand .logo-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .footer-brand .logo-text span {
+            display: block;
+        }
+
+        .footer-brand .logo-text .brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .footer-brand .logo-text .sub {
+            font-size: 1rem;
+            color: #cbd5e1;
+            margin-top: -2px;
+        }
+
+        .footer-tagline {
+            font-size: 0.875rem;
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+        }
+
+        /* Links Column */
+        .footer-links-col {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            transition: all 0.2s ease;
+            padding: 0.25rem 0;
+            position: relative;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(4px);
+        }
+
+        .footer-links a::before {
+            content: '▸';
+            position: absolute;
+            left: -12px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            color: #3b82f6;
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+        }
+
+        /* Contact Column */
+        .footer-contact-col {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-contact {
+            font-style: normal;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .contact-item svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: #3b82f6;
+            flex-shrink: 0;
+        }
+
+        .contact-item a {
+            color: #e2e8f0;
+            transition: color 0.2s ease;
+        }
+
+        .contact-item a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* Hours Column */
+        .footer-hours {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .hours-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .hours-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .hours-item svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: #60a5fa;
+            flex-shrink: 0;
+        }
+
+        .hours-item dt {
+            font-weight: 600;
+            display: inline;
+            color: white;
+        }
+
+        .hours-item dd {
+            display: inline;
+            margin-left: 0.5rem;
+            color: #cbd5e1;
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+        }
+
+        .footer-bottom-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom-inner {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        .footer-copyright {
+            color: #94a3b8;
+            font-size: 0.875rem;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-legal {
+                justify-content: flex-end;
+            }
+        }
+
+        .footer-legal a {
+            color: #94a3b8;
+            font-size: 0.875rem;
+            transition: color 0.2s ease;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+        }
+
+        .footer-legal a:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Adjustments for Footer */
+        @media (max-width: 639px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+
+            .footer-bottom-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-legal {
+                justify-content: center;
+            }
+        }
+    </style>
+    <script>
+        // Set current year in footer
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            document.getElementById('current-year')?.textContent = currentYear;
+        });
+    </script>
+</head>
+<body>
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo" aria-label="Fahrschule Dorn - Zur Startseite">
+                    <div class="logo-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
+                            <circle cx="7" cy="17" r="2"/>
+                            <circle cx="17" cy="17" r="2"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Fahrschule Dorn</span>
+                </a>
+                <a href="index.html" class="back-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Zur Startseite
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="container">
+            <article class="legal-card">
+                <h1 class="page-title">Impressum</h1>
+                <p class="page-subtitle">Angaben gem. § 5 TMG und § 18 Abs. 2 MStV</p>
+
+                <!-- Diensteanbieter -->
+                <section class="legal-section">
+                    <h2 class="section-title">Diensteanbieter</h2>
+                    <div class="contact-grid">
+                        <p><strong>Fahrschule Dorn</strong></p>
+                        <p>Inhaber: Sven Dorn</p>
+                        <p>Eberwiesenstrasse 5</p>
+                        <p>79787 Lauchringen</p>
+                        <p>Deutschland</p>
+                    </div>
+                </section>
+
+                <!-- Kontakt -->
+                <section class="legal-section">
+                    <h2 class="section-title">Kontaktdaten</h2>
+                    <div class="contact-grid">
+                        <p><strong>Telefon:</strong> <a href="tel:+4977418086883">07741 - 80 86 83</a></p>
+                        <p><strong>E-Mail:</strong> <a href="mailto:info@fahrschule-dorn.de">info@fahrschule-dorn.de</a></p>
+                    </div>
+                </section>
+
+                <!-- Vertretungsberechtigter -->
+                <section class="legal-section">
+                    <h2 class="section-title">Vertretungsberechtigter</h2>
+                    <p>Sven Dorn (Inhaber)</p>
+                </section>
+
+                <!-- Berufsbezeichnung -->
+                <section class="legal-section">
+                    <h2 class="section-title">Berufsbezeichnung und berufsrechtliche Regelungen</h2>
+                    <p><strong>Berufsbezeichnung:</strong> Fahrlehrer (verliehen in der Bundesrepublik Deutschland)</p>
+                    <p><strong>Zustandige Kammer:</strong> Industrie- und Handelskammer Hochrhein-Bodensee</p>
+                    <p><strong>Zustandige Aufsichtsbehorde:</strong></p>
+                    <p>Landratsamt Waldshut<br>
+                    Fuhrerscheinstelle<br>
+                    Kaiserstrasse 110<br>
+                    79761 Waldshut-Tiengen</p>
+
+                    <div class="info-box">
+                        <p><strong>Berufsrechtliche Regelungen:</strong></p>
+                        <p>Fahrlehrergesetz (FahrlG), Fahrerlaubnis-Verordnung (FeV), Strassenverkehrsgesetz (StVG)</p>
+                        <p>Einsehbar unter: <a href="https://www.gesetze-im-internet.de" target="_blank" rel="noopener noreferrer">www.gesetze-im-internet.de</a></p>
+                    </div>
+                </section>
+
+                <!-- Umsatzsteuer -->
+                <section class="legal-section">
+                    <h2 class="section-title">Umsatzsteuer-Identifikationsnummer</h2>
+                    <p>Umsatzsteuer-Identifikationsnummer gem. § 27a Umsatzsteuergesetz:</p>
+                    <p><strong>[USt-IdNr. hier eintragen]</strong></p>
+                    <div class="info-box">
+                        <p><em>Hinweis: Falls keine USt-IdNr. vorhanden ist, kann dieser Abschnitt entfernt oder durch "Kleinunternehmer gem. § 19 UStG" ersetzt werden.</em></p>
+                    </div>
+                </section>
+
+                <!-- Streitschlichtung -->
+                <section class="legal-section">
+                    <h2 class="section-title">EU-Streitschlichtung</h2>
+                    <p>Die Europaische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:</p>
+                    <p><a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a></p>
+                    <p>Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+
+                    <h3 style="font-size: 1rem; font-weight: 600; color: var(--color-slate-800); margin-top: 1.5rem; margin-bottom: 0.5rem;">Verbraucherstreitbeilegung</h3>
+                    <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+                </section>
+
+                <!-- Verantwortlich fur Inhalte -->
+                <section class="legal-section">
+                    <h2 class="section-title">Verantwortlich fur den Inhalt nach § 18 Abs. 2 MStV</h2>
+                    <p>Sven Dorn</p>
+                    <p>Eberwiesenstrasse 5</p>
+                    <p>79787 Lauchringen</p>
+                </section>
+
+                <!-- Haftung fur Inhalte -->
+                <section class="legal-section">
+                    <h2 class="section-title">Haftung fur Inhalte</h2>
+                    <p>Als Diensteanbieter sind wir gem. § 7 Abs. 1 TMG fur eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, ubermittelte oder gespeicherte fremde Informationen zu uberwachen oder nach Umstanden zu forschen, die auf eine rechtswidrige Tatigkeit hinweisen.</p>
+                    <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberuhrt. Eine diesbezugliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung moglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+                </section>
+
+                <!-- Haftung fur Links -->
+                <section class="legal-section">
+                    <h2 class="section-title">Haftung fur Links</h2>
+                    <p>Unser Angebot enthalt Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb konnen wir fur diese fremden Inhalte auch keine Gewahr ubernehmen. Fur die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+                    <p>Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mogliche Rechtsverstose uberpruft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+                </section>
+
+                <!-- Urheberrecht -->
+                <section class="legal-section">
+                    <h2 class="section-title">Urheberrecht</h2>
+                    <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfaltigung, Bearbeitung, Verbreitung und jede Art der Verwertung ausserhalb der Grenzen des Urheberrechtes bedurfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+                    <p>Downloads und Kopien dieser Seite sind nur fur den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+                </section>
+
+                <!-- Bildnachweise -->
+                <section class="legal-section">
+                    <h2 class="section-title">Bildnachweise</h2>
+                    <p>Auf dieser Website verwendete Bilder stammen aus folgenden Quellen:</p>
+                    <ul class="link-list">
+                        <li>Pexels (<a href="https://www.pexels.com" target="_blank" rel="noopener noreferrer">www.pexels.com</a>) - Lizenzfreie Bilder</li>
+                        <li>Eigene Aufnahmen der Fahrschule Dorn</li>
+                    </ul>
+                </section>
+
+                <nav class="nav-links" aria-label="Rechtliche Seiten">
+                    <a href="datenschutz.html">Datenschutzerklarung</a>
+                    <a href="index.html">Startseite</a>
+                </nav>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-wave" aria-hidden="true">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0C240 60 480 120 720 60C960 0 1200 60 1200 60V120H0V0Z" fill="#1e293b"></path>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-grid">
+                    <!-- Brand Section -->
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <div class="logo-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
+                                    <circle cx="7" cy="17" r="2"/>
+                                    <circle cx="17" cy="17" r="2"/>
+                                </svg>
+                            </div>
+                            <div class="logo-text">
+                                <span class="brand">Fahrschule</span>
+                                <span class="sub">Dorn</span>
+                            </div>
+                        </div>
+                        <p class="footer-tagline">Ihre Fahrschule in Lauchringen für persönliche Betreuung und erfolgreiche Führerscheinausbildung.</p>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <nav class="footer-links-col" aria-label="Schnelllinks">
+                        <h3>Schnelllinks</h3>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Startseite</a></li>
+                            <li><a href="datenschutz.html">Datenschutz</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Contact Info -->
+                    <div class="footer-contact-col">
+                        <h3>Kontakt</h3>
+                        <address class="footer-contact">
+                            <div class="contact-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                <a href="tel:+4977418086883">07741 - 80 86 83</a>
+                            </div>
+                            <div class="contact-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                <a href="mailto:info@fahrschule-dorn.de">info@fahrschule-dorn.de</a>
+                            </div>
+                            <div class="contact-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                Eberwiesenstraße 5, 79787 Lauchringen
+                            </div>
+                        </address>
+                    </div>
+
+                    <!-- Opening Hours -->
+                    <div class="footer-hours">
+                        <h3>Öffnungszeiten</h3>
+                        <dl class="hours-list">
+                            <div class="hours-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                <div>
+                                    <dt>Mo-Fr:</dt>
+                                    <dd>10:00 - 18:00 Uhr</dd>
+                                </div>
+                            </div>
+                            <div class="hours-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                <div>
+                                    <dt>Sa:</dt>
+                                    <dd>10:00 - 13:00 Uhr</dd>
+                                </div>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-inner">
+                    <p class="footer-copyright">&copy; <span id="current-year">2026</span> Fahrschule Dorn. Alle Rechte vorbehalten.</p>
+                    <nav class="footer-legal" aria-label="Rechtliche Links">
+                        <a href="datenschutz.html">Datenschutz</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

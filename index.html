@@ -1,0 +1,2089 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fahrschule Dorn in Lauchringen - Ihre Fahrschule für PKW, Motorrad, LKW und mehr. Persönliche Betreuung und individuelle Ausbildung.">
+    <meta name="keywords" content="Fahrschule Lauchringen, Führerschein PKW, Führerschein Motorrad, Fahrschule Dorn, Fahrstunden, Führerschein mit 17">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Fahrschule Dorn - Lauchringen">
+    <meta property="og:description" content="Ihre Fahrschule in Lauchringen für alle Führerscheinklassen mit persönlicher Betreuung.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.fahrschule-dorn.de">
+    <meta property="og:image" content="https://images.pexels.com/photos/18285509/pexels-photo-18285509/free-photo-of-bmw-m2-in-training-on-circuit.jpeg">
+    <title>Fahrschule Dorn - Lauchringen | Führerschein mit persönlicher Betreuung</title>
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232563eb'/><text x='50' y='65' text-anchor='middle' fill='white' font-size='35' font-family='system-ui'>FD</text></svg>" type="image/svg+xml">
+
+    <!-- Preconnect für externe Ressourcen -->
+    <link rel="preconnect" href="https://images.pexels.com" crossorigin>
+    <link rel="preconnect" href="https://www.google.com" crossorigin>
+    <link rel="dns-prefetch" href="https://images.leadconnectorhq.com">
+
+    <style>
+        /* ============================================
+           DESIGN SYSTEM - CSS Custom Properties
+           ============================================ */
+        :root {
+            /* Color Palette - Slate & Blue Harmony */
+            --color-primary-50: #eff6ff;
+            --color-primary-100: #dbeafe;
+            --color-primary-200: #bfdbfe;
+            --color-primary-300: #93c5fd;
+            --color-primary-400: #60a5fa;
+            --color-primary-500: #3b82f6;
+            --color-primary-600: #2563eb;
+            --color-primary-700: #1d4ed8;
+            --color-primary-800: #1e40af;
+            --color-primary-900: #1e3a8a;
+
+            --color-accent-400: #4ade80;
+            --color-accent-500: #22c55e;
+            --color-accent-600: #16a34a;
+
+            --color-slate-50: #f8fafc;
+            --color-slate-100: #f1f5f9;
+            --color-slate-200: #e2e8f0;
+            --color-slate-300: #cbd5e1;
+            --color-slate-400: #94a3b8;
+            --color-slate-500: #64748b;
+            --color-slate-600: #475569;
+            --color-slate-700: #334155;
+            --color-slate-800: #1e293b;
+            --color-slate-900: #0f172a;
+
+            --color-red-100: #fee2e2;
+            --color-red-500: #ef4444;
+            --color-red-600: #dc2626;
+
+            /* Typography - System Font Stack */
+            --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+            --font-mono: ui-monospace, 'SF Mono', Monaco, 'Cascadia Code', Consolas, monospace;
+
+            /* Font Sizes */
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            --text-5xl: 3rem;
+            --text-6xl: 3.75rem;
+
+            /* Line Heights */
+            --leading-tight: 1.25;
+            --leading-snug: 1.375;
+            --leading-normal: 1.5;
+            --leading-relaxed: 1.625;
+
+            /* Spacing */
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+            --space-24: 6rem;
+
+            /* Border Radius */
+            --radius-sm: 0.25rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            --radius-full: 9999px;
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+            /* Transitions */
+            --transition-fast: 150ms ease;
+            --transition-base: 200ms ease;
+            --transition-slow: 300ms ease;
+
+            /* Container */
+            --container-max: 1200px;
+            --container-padding: var(--space-4);
+        }
+
+        /* ============================================
+           BASE STYLES & RESET
+           ============================================ */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-system);
+            font-size: var(--text-base);
+            line-height: var(--leading-normal);
+            color: var(--color-slate-700);
+            background-color: #ffffff;
+        }
+
+        img, svg {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+            font-size: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        /* ============================================
+           ACCESSIBILITY
+           ============================================ */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--color-primary-500);
+            outline-offset: 2px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            padding: var(--space-3) var(--space-6);
+            background: var(--color-primary-600);
+            color: white;
+            font-weight: 600;
+            border-radius: 0 0 var(--radius-md) var(--radius-md);
+            transition: top var(--transition-fast);
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* ============================================
+           LAYOUT UTILITIES
+           ============================================ */
+        .container {
+            width: 100%;
+            max-width: var(--container-max);
+            margin-inline: auto;
+            padding-inline: var(--container-padding);
+        }
+
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .justify-between { justify-content: space-between; }
+        .gap-2 { gap: var(--space-2); }
+        .gap-3 { gap: var(--space-3); }
+        .gap-4 { gap: var(--space-4); }
+        .gap-6 { gap: var(--space-6); }
+        .gap-8 { gap: var(--space-8); }
+        .gap-12 { gap: var(--space-12); }
+
+        .grid { display: grid; }
+        .grid-cols-1 { grid-template-columns: 1fr; }
+
+        @media (min-width: 768px) {
+            .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+            .md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+            .lg\:flex { display: flex; }
+            .lg\:hidden { display: none; }
+        }
+
+        .text-center { text-align: center; }
+
+        /* ============================================
+           ICON SYSTEM
+           ============================================ */
+        .icon {
+            width: 1.25em;
+            height: 1.25em;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        .icon-sm { width: 1em; height: 1em; }
+        .icon-lg { width: 1.5em; height: 1.5em; }
+        .icon-xl { width: 2em; height: 2em; }
+
+        /* ============================================
+           HEADER & NAVIGATION
+           ============================================ */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--color-slate-100);
+            transition: box-shadow var(--transition-base);
+        }
+
+        .header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-block: var(--space-4);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-700));
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            color: white;
+        }
+
+        .logo-text span {
+            display: block;
+        }
+
+        .logo-text .brand {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--color-slate-800);
+        }
+
+        .logo-text .sub {
+            font-size: var(--text-sm);
+            color: var(--color-slate-500);
+            margin-top: -2px;
+        }
+
+        .nav-desktop {
+            display: none;
+            align-items: center;
+            gap: var(--space-1);
+        }
+
+        @media (min-width: 1024px) {
+            .nav-desktop { display: flex; }
+        }
+
+        .nav-link {
+            position: relative;
+            padding: var(--space-2) var(--space-4);
+            color: var(--color-slate-600);
+            font-weight: 500;
+            transition: color var(--transition-fast);
+        }
+
+        .nav-link:hover {
+            color: var(--color-primary-600);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: var(--space-4);
+            right: var(--space-4);
+            height: 2px;
+            background: var(--color-primary-600);
+            transform: scaleX(0);
+            transition: transform var(--transition-base);
+        }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            min-width: 160px;
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            padding: var(--space-2);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: all var(--transition-base);
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu,
+        .nav-dropdown:focus-within .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .nav-dropdown-item {
+            display: block;
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-md);
+            color: var(--color-slate-600);
+            transition: background var(--transition-fast);
+        }
+
+        .nav-dropdown-item:hover {
+            background: var(--color-slate-50);
+            color: var(--color-primary-600);
+        }
+
+        .mobile-controls {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+        }
+
+        @media (min-width: 1024px) {
+            .mobile-controls .menu-toggle { display: none; }
+        }
+
+        .menu-toggle {
+            padding: var(--space-2);
+            border-radius: var(--radius-md);
+            color: var(--color-slate-700);
+            transition: background var(--transition-fast);
+        }
+
+        .menu-toggle:hover {
+            background: var(--color-slate-100);
+        }
+
+        .mobile-nav {
+            display: none;
+            padding-bottom: var(--space-4);
+        }
+
+        .mobile-nav.open {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .mobile-nav-inner {
+            background: white;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            padding: var(--space-4);
+            margin-top: var(--space-2);
+        }
+
+        .mobile-nav-link {
+            display: block;
+            padding: var(--space-3) var(--space-4);
+            border-radius: var(--radius-md);
+            color: var(--color-slate-700);
+            font-weight: 500;
+            transition: background var(--transition-fast);
+        }
+
+        .mobile-nav-link:hover {
+            background: var(--color-slate-50);
+        }
+
+        @media (min-width: 1024px) {
+            .mobile-nav { display: none !important; }
+        }
+
+        /* ============================================
+           BUTTONS
+           ============================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            padding: var(--space-3) var(--space-6);
+            font-weight: 600;
+            border-radius: var(--radius-full);
+            transition: all var(--transition-base);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-700));
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(37, 99, 235, 0.45);
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, var(--color-accent-500), var(--color-accent-600));
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(34, 197, 94, 0.35);
+        }
+
+        .btn-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(34, 197, 94, 0.45);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--color-primary-600);
+            border: 2px solid var(--color-primary-600);
+        }
+
+        .btn-outline:hover {
+            background: var(--color-primary-600);
+            color: white;
+        }
+
+        .btn-sm {
+            padding: var(--space-2) var(--space-4);
+            font-size: var(--text-sm);
+        }
+
+        .btn-lg {
+            padding: var(--space-4) var(--space-8);
+            font-size: var(--text-lg);
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.85), rgba(37, 99, 235, 0.85)),
+                        url('https://images.pexels.com/photos/18285509/pexels-photo-18285509/free-photo-of-bmw-m2-in-training-on-circuit.jpeg?auto=compress&cs=tinysrgb&w=1260');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            padding: var(--space-8);
+        }
+
+        .hero-title {
+            font-size: clamp(var(--text-3xl), 5vw, var(--text-6xl));
+            font-weight: 800;
+            line-height: var(--leading-tight);
+            margin-bottom: var(--space-6);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(var(--text-lg), 2.5vw, var(--text-2xl));
+            opacity: 0.95;
+            max-width: 700px;
+            margin-inline: auto;
+            margin-bottom: var(--space-8);
+            line-height: var(--leading-relaxed);
+            animation: fadeInUp 0.8s ease 0.1s backwards;
+        }
+
+        .hero-contact {
+            font-style: normal;
+            margin-bottom: var(--space-8);
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .hero-contact p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            margin-bottom: var(--space-2);
+            font-size: var(--text-lg);
+        }
+
+        .hero-contact a:hover {
+            text-decoration: underline;
+        }
+
+        .hero-cta {
+            animation: fadeInUp 0.8s ease 0.3s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============================================
+           SECTIONS
+           ============================================ */
+        .section {
+            padding-block: var(--space-20);
+        }
+
+        .section-alt {
+            background: var(--color-slate-50);
+        }
+
+        .section-title {
+            font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+            font-weight: 800;
+            color: var(--color-slate-800);
+            margin-bottom: var(--space-4);
+        }
+
+        .section-subtitle {
+            font-size: var(--text-lg);
+            color: var(--color-slate-500);
+            max-width: 700px;
+            margin-inline: auto;
+            line-height: var(--leading-relaxed);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-12);
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================
+           CARDS
+           ============================================ */
+        .card {
+            background: white;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            transition: all var(--transition-slow);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-4px);
+        }
+
+        .card-body {
+            padding: var(--space-6);
+        }
+
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: var(--radius-full);
+            background: var(--color-red-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-4);
+            color: var(--color-red-500);
+        }
+
+        .card-title {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--color-slate-800);
+            margin-bottom: var(--space-4);
+        }
+
+        .license-item {
+            padding-left: var(--space-4);
+            border-left: 4px solid var(--color-red-500);
+            margin-bottom: var(--space-4);
+        }
+
+        .license-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .license-item h4 {
+            font-weight: 600;
+            color: var(--color-slate-800);
+            margin-bottom: var(--space-1);
+        }
+
+        .license-item p {
+            font-size: var(--text-sm);
+            color: var(--color-slate-500);
+            line-height: var(--leading-relaxed);
+        }
+
+        /* ============================================
+           AUSBILDUNG SECTION
+           ============================================ */
+        .ausbildung-grid {
+            display: grid;
+            gap: var(--space-12);
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .ausbildung-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .ausbildung-image {
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .ausbildung-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+
+        .ausbildung-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .ausbildung-content h2 {
+            font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+            font-weight: 800;
+            color: var(--color-slate-800);
+            margin-bottom: var(--space-6);
+        }
+
+        .ausbildung-content p {
+            color: var(--color-slate-600);
+            margin-bottom: var(--space-4);
+            line-height: var(--leading-relaxed);
+        }
+
+        /* ============================================
+           INFOS/KONTAKT SECTION
+           ============================================ */
+        .infos-section {
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.92), rgba(37, 99, 235, 0.92)),
+                        url('https://images.pexels.com/photos/5120103/pexels-photo-5120103.jpeg?auto=compress&cs=tinysrgb&w=1260');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .infos-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .infos-card h2, .infos-card h3 {
+            margin-bottom: var(--space-6);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            margin-bottom: var(--space-6);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-item a {
+            font-size: var(--text-lg);
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .hours-list dt {
+            font-weight: 600;
+            display: inline;
+        }
+
+        .hours-list dd {
+            display: inline;
+            margin-left: var(--space-2);
+        }
+
+        .hours-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            margin-bottom: var(--space-4);
+        }
+
+        .map-container {
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-2xl);
+            margin-top: var(--space-8);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 280px;
+            border: 0;
+        }
+
+        /* ============================================
+           ACCORDION
+           ============================================ */
+        .accordion {
+            max-width: 900px;
+            margin-inline: auto;
+        }
+
+        .accordion-item {
+            border: 1px solid var(--color-slate-200);
+            border-radius: var(--radius-xl);
+            margin-bottom: var(--space-4);
+            overflow: hidden;
+            transition: box-shadow var(--transition-base);
+        }
+
+        .accordion-item:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .accordion-trigger {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-6);
+            text-align: left;
+            background: white;
+            transition: background var(--transition-fast);
+        }
+
+        .accordion-trigger:hover {
+            background: var(--color-slate-50);
+        }
+
+        .accordion-trigger-content {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+        }
+
+        .accordion-trigger h3 {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            color: var(--color-slate-800);
+        }
+
+        .accordion-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--color-red-100);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-red-500);
+        }
+
+        .accordion-chevron {
+            color: var(--color-slate-400);
+            transition: transform var(--transition-base);
+        }
+
+        .accordion-item.open .accordion-chevron {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 0 var(--space-6) var(--space-6);
+        }
+
+        .accordion-item.open .accordion-content {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .info-list {
+            margin-left: var(--space-6);
+            margin-bottom: var(--space-6);
+        }
+
+        .info-list li {
+            position: relative;
+            padding-left: var(--space-4);
+            margin-bottom: var(--space-2);
+            color: var(--color-slate-600);
+        }
+
+        .info-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6em;
+            width: 6px;
+            height: 6px;
+            background: var(--color-red-500);
+            border-radius: var(--radius-full);
+        }
+
+        .info-item {
+            display: flex;
+            gap: var(--space-3);
+            margin-bottom: var(--space-4);
+        }
+
+        .info-item-icon {
+            color: var(--color-red-500);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .info-item h4 {
+            font-weight: 600;
+            color: var(--color-slate-800);
+            margin-bottom: var(--space-1);
+        }
+
+        .info-item p {
+            font-size: var(--text-sm);
+            color: var(--color-slate-500);
+        }
+
+        .info-note {
+            background: var(--color-slate-50);
+            padding: var(--space-4);
+            border-radius: var(--radius-lg);
+            margin-top: var(--space-6);
+        }
+
+        .info-note p {
+            font-size: var(--text-sm);
+            color: var(--color-slate-600);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            position: relative;
+            background: var(--color-slate-800);
+            color: white;
+            padding-top: 4rem;
+            overflow: hidden;
+            clear: both;
+        }
+
+        .footer-wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100px;
+            transform: translateY(-99px);
+            z-index: 0;
+        }
+
+        .footer-wave svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .footer-main {
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-grid {
+            display: grid;
+            gap: var(--space-8);
+            margin-bottom: var(--space-8);
+        }
+
+        @media (min-width: 640px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .footer h3 {
+            font-size: var(--text-lg);
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+            color: white;
+            position: relative;
+            padding-bottom: var(--space-2);
+        }
+
+        .footer h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 24px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary-500), var(--color-primary-400));
+            border-radius: var(--radius-full);
+        }
+
+        .footer p {
+            color: var(--color-slate-300);
+            line-height: var(--leading-relaxed);
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .footer-brand .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            margin-bottom: var(--space-2);
+        }
+
+        .footer-brand .logo-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-700));
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            color: white;
+        }
+
+        .footer-brand .logo-text span {
+            display: block;
+        }
+
+        .footer-brand .logo-text .brand {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: white;
+        }
+
+        .footer-brand .logo-text .sub {
+            font-size: var(--text-base);
+            color: var(--color-slate-300);
+            margin-top: -2px;
+        }
+
+        .footer-tagline {
+            font-size: var(--text-sm);
+            color: var(--color-slate-300);
+            margin-bottom: var(--space-4);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: var(--space-3);
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all var(--transition-base);
+        }
+
+        .footer-social a:hover {
+            background: var(--color-primary-600);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .footer-links-col {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+        }
+
+        .footer-links li {
+            margin-bottom: var(--space-2);
+        }
+
+        .footer-links a {
+            color: var(--color-slate-300);
+            transition: all var(--transition-fast);
+            padding: var(--space-1) 0;
+            position: relative;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(4px);
+        }
+
+        .footer-links a::before {
+            content: '\25B8';
+            position: absolute;
+            left: -12px;
+            opacity: 0;
+            transition: opacity var(--transition-fast);
+            color: var(--color-primary-500);
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+        }
+
+        .footer-contact-col {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+        }
+
+        .footer-contact {
+            font-style: normal;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+        }
+
+        .footer .contact-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            margin-bottom: 0;
+        }
+
+        .footer .contact-item svg {
+            color: var(--color-primary-500);
+            flex-shrink: 0;
+        }
+
+        .footer .contact-item a {
+            color: var(--color-slate-200);
+            font-size: var(--text-base);
+            transition: color var(--transition-fast);
+        }
+
+        .footer .contact-item a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .footer-hours {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+        }
+
+        .footer .hours-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+        }
+
+        .footer .hours-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            margin-bottom: 0;
+        }
+
+        .footer .hours-item svg {
+            color: var(--color-primary-400);
+            flex-shrink: 0;
+        }
+
+        .footer .hours-item dt {
+            font-weight: 600;
+            display: inline;
+            color: white;
+        }
+
+        .footer .hours-item dd {
+            display: inline;
+            margin-left: var(--space-2);
+            color: var(--color-slate-300);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--space-6);
+        }
+
+        .footer-bottom-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-4);
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom-inner {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        .footer-copyright {
+            color: var(--color-slate-400);
+            font-size: var(--text-sm);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: var(--space-6);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-legal {
+                justify-content: flex-end;
+            }
+        }
+
+        .footer-legal a {
+            color: var(--color-slate-400);
+            font-size: var(--text-sm);
+            transition: color var(--transition-fast);
+            padding: var(--space-1) var(--space-2);
+            border-radius: var(--radius-md);
+        }
+
+        .footer-legal a:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* ============================================
+           UTILITY CLASSES
+           ============================================ */
+        .hidden { display: none; }
+        .block { display: block; }
+        .inline-block { display: inline-block; }
+
+        .mt-4 { margin-top: var(--space-4); }
+        .mt-6 { margin-top: var(--space-6); }
+        .mt-8 { margin-top: var(--space-8); }
+        .mt-12 { margin-top: var(--space-12); }
+        .mb-4 { margin-bottom: var(--space-4); }
+        .mb-6 { margin-bottom: var(--space-6); }
+        .mb-8 { margin-bottom: var(--space-8); }
+
+        .opacity-90 { opacity: 0.9; }
+
+        /* ============================================
+           RESPONSIVE ADJUSTMENTS
+           ============================================ */
+        @media (max-width: 767px) {
+            :root {
+                --container-padding: var(--space-4);
+            }
+
+            .section {
+                padding-block: var(--space-12);
+            }
+
+            .card-body {
+                padding: var(--space-5);
+            }
+
+            .infos-card {
+                padding: var(--space-6);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+
+            .footer-bottom-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-legal {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#start" class="logo" aria-label="Fahrschule Dorn - Zur Startseite">
+                    <div class="logo-icon" aria-hidden="true">
+                        <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
+                            <circle cx="7" cy="17" r="2"/>
+                            <circle cx="17" cy="17" r="2"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <span class="brand">Fahrschule</span>
+                        <span class="sub">Dorn</span>
+                    </div>
+                </a>
+
+                <nav class="nav-desktop" role="navigation" aria-label="Hauptnavigation">
+                    <a href="#start" class="nav-link">Start</a>
+                    <a href="#klassen" class="nav-link">FS-Klassen</a>
+                    <a href="#ausbildung" class="nav-link">Ausbildung</a>
+                    <a href="#infos" class="nav-link">Infos</a>
+                    <a href="#behoerden" class="nav-link">Behörden</a>
+                    <a href="https://www.facebook.com/groups/150656274984639/" target="_blank" rel="noopener noreferrer" class="nav-link flex items-center gap-2">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                        Facebook
+                        <span class="sr-only">(öffnet in neuem Tab)</span>
+                    </a>
+                    <div class="nav-dropdown">
+                        <button type="button" class="nav-link flex items-center gap-2" aria-expanded="false" aria-haspopup="menu">
+                            Mehr
+                            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="nav-dropdown-menu" role="menu">
+                            <a href="#news" class="nav-dropdown-item" role="menuitem">NEWS</a>
+                            <a href="#links" class="nav-dropdown-item" role="menuitem">Links</a>
+                        </div>
+                    </div>
+                    <a href="#infos" class="btn btn-primary btn-sm" style="margin-left: var(--space-4);">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        Kontakt
+                    </a>
+                </nav>
+
+                <div class="mobile-controls">
+                    <button type="button" class="menu-toggle" id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">
+                        <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <line x1="3" y1="12" x2="21" y2="12"/>
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <line x1="3" y1="18" x2="21" y2="18"/>
+                        </svg>
+                    </button>
+                    <a href="tel:+4977418086883" class="btn btn-primary btn-sm lg:hidden">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        Anruf
+                    </a>
+                </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-nav" role="navigation" aria-label="Mobile Navigation">
+                <div class="mobile-nav-inner">
+                    <a href="#start" class="mobile-nav-link">Start</a>
+                    <a href="#klassen" class="mobile-nav-link">FS-Klassen</a>
+                    <a href="#ausbildung" class="mobile-nav-link">Ausbildung</a>
+                    <a href="#infos" class="mobile-nav-link">Infos</a>
+                    <a href="#behoerden" class="mobile-nav-link">Behörden-Infos</a>
+                    <a href="https://www.facebook.com/groups/150656274984639/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link flex items-center gap-2">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="var(--color-primary-600)" aria-hidden="true">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                        Facebook
+                    </a>
+                    <a href="#news" class="mobile-nav-link">NEWS</a>
+                    <a href="#links" class="mobile-nav-link">Links</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="start" class="hero" aria-labelledby="hero-heading">
+            <div class="hero-content">
+                <h1 id="hero-heading" class="hero-title">Willkommen bei Fahrschule Dorn in Lauchringen</h1>
+                <p class="hero-subtitle">Ihre Ausbildung und Betreuung liegt uns am Herzen – also stehen SIE im Mittelpunkt.</p>
+
+                <address class="hero-contact">
+                    <p>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <span class="sr-only">Telefon:</span>
+                        <a href="tel:+4977418086883">07741 - 80 86 83</a>
+                    </p>
+                    <p>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <span class="sr-only">E-Mail:</span>
+                        <a href="mailto:info@fahrschule-dorn.de">info@fahrschule-dorn.de</a>
+                    </p>
+                    <p>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <span class="sr-only">Adresse:</span>
+                        Eberwiesenstraße 5, 79787 Lauchringen
+                    </p>
+                </address>
+
+                <div class="hero-cta">
+                    <a href="#infos" class="btn btn-accent btn-lg">Jetzt anmelden</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FS-Klassen Section -->
+        <section id="klassen" class="section section-alt" aria-labelledby="klassen-heading">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2 id="klassen-heading" class="section-title">Unsere Führerscheinklassen</h2>
+                    <p class="section-subtitle">Wählen Sie die passende Führerscheinklasse für Ihre Bedürfnisse. Wir bieten umfassende Ausbildung mit modernsten Fahrzeugen.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- PKW -->
+                    <article class="card fade-in">
+                        <div class="card-body">
+                            <div class="card-icon" aria-hidden="true">
+                                <svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
+                                    <circle cx="7" cy="17" r="2"/>
+                                    <circle cx="17" cy="17" r="2"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">PKW Führerschein</h3>
+                            <div class="license-item">
+                                <h4>Klasse B</h4>
+                                <p>Mindestalter: 18 Jahre | Eingeschlossen: AM, L</p>
+                                <p>Kraftfahrzeuge bis 3.500 kg zGM</p>
+                            </div>
+                            <div class="license-item">
+                                <h4>Klasse BE</h4>
+                                <p>Mindestalter: 18 Jahre | Voraussetzung: Klasse B</p>
+                                <p>Anhänger bis 3.500 kg zGM</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Motorrad -->
+                    <article class="card fade-in">
+                        <div class="card-body">
+                            <div class="card-icon" aria-hidden="true">
+                                <svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="5" cy="17" r="3"/>
+                                    <circle cx="19" cy="17" r="3"/>
+                                    <path d="M9 17h6"/>
+                                    <path d="M19 9c-3 0-4.5 1.5-5 3l-4-5c-.5-.6-1.2-1-2-1H5"/>
+                                    <path d="M14 9l-2-2"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Motorrad Führerschein</h3>
+                            <div class="license-item">
+                                <h4>Klasse A</h4>
+                                <p>Mindestalter: 24 Jahre | Unbeschränkte Motorräder</p>
+                            </div>
+                            <div class="license-item">
+                                <h4>Klasse A2</h4>
+                                <p>Mindestalter: 18 Jahre | Bis 35 kW Leistung</p>
+                            </div>
+                            <div class="license-item">
+                                <h4>Klasse A1</h4>
+                                <p>Mindestalter: 16 Jahre | Leichtkrafträder bis 125 cm³</p>
+                            </div>
+                            <div class="license-item">
+                                <h4>Klasse AM</h4>
+                                <p>Mindestalter: 16 Jahre | Roller bis 45 km/h</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Mofa/Roller -->
+                    <article class="card fade-in">
+                        <div class="card-body">
+                            <div class="card-icon" aria-hidden="true">
+                                <svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="6" cy="17" r="3"/>
+                                    <circle cx="18" cy="17" r="3"/>
+                                    <path d="M6 14V9a2 2 0 0 1 2-2h3a2 2 0 0 1 1.83 1.17L15 14"/>
+                                    <path d="M15 14V7"/>
+                                    <path d="M15 7h3"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Kleinkrafträder & Mofa</h3>
+                            <div class="license-item">
+                                <h4>Roller (Klasse AM)</h4>
+                                <p>Mindestalter: 16 Jahre | Bis 45 km/h, 50 cm³</p>
+                            </div>
+                            <div class="license-item">
+                                <h4>Mofa</h4>
+                                <p>Mindestalter: 15 Jahre | Bis 25 km/h, 50 cm³</p>
+                            </div>
+                            <div class="license-item">
+                                <h4>Führerschein mit 17 (BF17)</h4>
+                                <p>Mindestalter: 17 Jahre | Begleitetes Fahren</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- LKW -->
+                    <article class="card fade-in">
+                        <div class="card-body">
+                            <div class="card-icon" aria-hidden="true">
+                                <svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 3h15v13H1z"/>
+                                    <path d="M16 8h4l3 3v5h-7V8z"/>
+                                    <circle cx="5.5" cy="18.5" r="2.5"/>
+                                    <circle cx="18.5" cy="18.5" r="2.5"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">LKW Führerschein</h3>
+                            <div class="license-item">
+                                <h4>Klasse C</h4>
+                                <p>Mindestalter: 18 Jahre | LKW über 3.500 kg zGM</p>
+                            </div>
+                            <div class="license-item">
+                                <h4>Klasse CE</h4>
+                                <p>Mindestalter: 18 Jahre | LKW mit Anhänger</p>
+                            </div>
+                            <div class="license-item">
+                                <h4>Klasse C1 / C1E</h4>
+                                <p>Mindestalter: 18 Jahre | LKW bis 7.500 kg zGM</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Bus -->
+                    <article class="card fade-in">
+                        <div class="card-body">
+                            <div class="card-icon" aria-hidden="true">
+                                <svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M8 6v6"/>
+                                    <path d="M16 6v6"/>
+                                    <path d="M2 12h20"/>
+                                    <path d="M7 18H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+                                    <circle cx="7" cy="18" r="2"/>
+                                    <circle cx="17" cy="18" r="2"/>
+                                    <path d="M11 18h2"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Bus Führerschein</h3>
+                            <div class="license-item">
+                                <h4>Klasse D</h4>
+                                <p>Mindestalter: 24 Jahre | Busse mit mehr als 8 Sitzplätzen</p>
+                            </div>
+                            <div class="license-item">
+                                <h4>Klasse DE</h4>
+                                <p>Mindestalter: 24 Jahre | Busse mit Anhänger</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Traktor -->
+                    <article class="card fade-in">
+                        <div class="card-body">
+                            <div class="card-icon" aria-hidden="true">
+                                <svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="7" cy="17" r="4"/>
+                                    <circle cx="19" cy="17" r="2"/>
+                                    <path d="M3 17V9a2 2 0 0 1 2-2h4l3 4h7a2 2 0 0 1 2 2v4"/>
+                                    <path d="M14 9v2"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Traktor & Landwirtschaft</h3>
+                            <div class="license-item">
+                                <h4>Klasse T</h4>
+                                <p>Mindestalter: 16-18 Jahre | Zugmaschinen bis 60 km/h</p>
+                                <p>16-18 Jahre: beschränkt auf 40 km/h</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Sonderkurse -->
+                    <article class="card fade-in">
+                        <div class="card-body">
+                            <div class="card-icon" aria-hidden="true">
+                                <svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Sonderkurse & Weiterbildung</h3>
+                            <div class="license-item">
+                                <h4>BKFQG</h4>
+                                <p>Berufskraftfahrer-Qualifikationsgesetz</p>
+                                <p>Grundqualifikation & Weiterbildung</p>
+                            </div>
+                            <div class="license-item">
+                                <h4>Punkte-Tilgungs-Kurse</h4>
+                                <p>Fahreignungs-Seminar (FES) | Aufbauseminar (ASF)</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ausbildung Section -->
+        <section id="ausbildung" class="section" aria-labelledby="ausbildung-heading">
+            <div class="container">
+                <div class="ausbildung-grid">
+                    <div class="ausbildung-content fade-in">
+                        <h2 id="ausbildung-heading">Individuelle Ausbildung</h2>
+                        <p>Bei uns steht Ihre persönliche Betreuung im Vordergrund. Wir passen die Ausbildung an Ihre Bedürfnisse an und begleiten Sie bis zum erfolgreichen Führerschein.</p>
+                        <p>Unsere erfahrenen Fahrlehrer vermitteln nicht nur das nötige Wissen, sondern auch die Sicherheit für den Straßenverkehr.</p>
+                        <a href="#infos" class="btn btn-primary mt-6">Mehr erfahren</a>
+                    </div>
+                    <div class="ausbildung-image fade-in">
+                        <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_800/u_https://assets.cdn.filesafe.space/oEFpUcVZG3buxhUEKOlw/media/203b8f87-2980-4a9f-81b5-6ec095e5ae4d.png" alt="Fahrlehrer gibt Fahrschülerin Anweisungen im Auto" width="800" height="533" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Infos & Kontakt Section -->
+        <section id="infos" class="section infos-section" aria-labelledby="infos-heading">
+            <div class="container">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="infos-card fade-in">
+                        <h2 id="infos-heading" class="section-title" style="color: white;">Kontakt & Anmeldung</h2>
+                        <p class="opacity-90 mb-8" style="font-size: var(--text-lg);">Melden Sie sich persönlich bei uns an oder kontaktieren Sie uns für weitere Informationen.</p>
+
+                        <address style="font-style: normal;">
+                            <div class="contact-item">
+                                <div class="contact-icon" aria-hidden="true">
+                                    <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    </svg>
+                                </div>
+                                <a href="tel:+4977418086883">07741 - 80 86 83</a>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon" aria-hidden="true">
+                                    <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                    </svg>
+                                </div>
+                                <a href="mailto:info@fahrschule-dorn.de">info@fahrschule-dorn.de</a>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon" aria-hidden="true">
+                                    <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                        <circle cx="12" cy="10" r="3"/>
+                                    </svg>
+                                </div>
+                                <span>Eberwiesenstraße 5, 79787 Lauchringen</span>
+                            </div>
+                        </address>
+
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.493!2d8.348!3d47.620!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47903a11f5d!2sEberwiesenstra%C3%9Fe%205%2C%2079787%20Lauchringen!5e0!3m2!1sde!2sde!4v1700000000000&zoom=15" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps Standort: Fahrschule Dorn, Eberwiesenstraße 5, 79787 Lauchringen"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="infos-card fade-in">
+                        <h3 style="font-size: var(--text-2xl); font-weight: 600;">Persönliche Anmeldung</h3>
+                        <p class="opacity-90 mb-6">Kommt einfach während unserer Öffnungszeiten vorbei:</p>
+
+                        <dl class="hours-list">
+                            <div class="hours-item">
+                                <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-primary-300);" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                <div>
+                                    <dt>Mo-Fr:</dt>
+                                    <dd>10:00 - 18:00 Uhr</dd>
+                                </div>
+                            </div>
+                            <div class="hours-item">
+                                <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-primary-300);" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                <div>
+                                    <dt>Sa:</dt>
+                                    <dd>10:00 - 13:00 Uhr</dd>
+                                </div>
+                            </div>
+                        </dl>
+
+                        <div style="border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-xl); margin-top: var(--space-6);">
+                            <img src="https://lirp.cdn-website.com/d7067f0b/dms3rep/multi/opt/decorative+office+building+in+Buford+GA-640w.jpg" alt="Modernes Fahrschul-Büro" width="640" height="360" loading="lazy" decoding="async" style="width: 100%; height: 200px; object-fit: cover;">
+                        </div>
+
+                        <p class="text-center mt-6 opacity-90" style="font-size: var(--text-lg);">Wir freuen uns auf Ihren Besuch!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Behörden-Infos Section -->
+        <section id="behoerden" class="section" aria-labelledby="behoerden-heading">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2 id="behoerden-heading" class="section-title">Behörden-Infos</h2>
+                    <p class="section-subtitle">Alle wichtigen Informationen zur Antragstellung und den Voraussetzungen für Ihren Führerschein.</p>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-item open fade-in">
+                        <button type="button" class="accordion-trigger" aria-expanded="true" aria-controls="acc-1">
+                            <div class="accordion-trigger-content">
+                                <div class="accordion-icon" aria-hidden="true">
+                                    <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 21h18"/>
+                                        <path d="M9 8h1"/>
+                                        <path d="M9 12h1"/>
+                                        <path d="M9 16h1"/>
+                                        <path d="M14 8h1"/>
+                                        <path d="M14 12h1"/>
+                                        <path d="M14 16h1"/>
+                                        <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/>
+                                    </svg>
+                                </div>
+                                <h3>Antragstellung bei den Behörden</h3>
+                            </div>
+                            <svg class="icon accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-content" id="acc-1" role="region" aria-labelledby="acc-1-heading">
+                            <p style="color: var(--color-slate-600); margin-bottom: var(--space-4);">Der Antrag für Ihren Führerschein kann bei folgenden Behörden gestellt werden:</p>
+                            <ul class="info-list">
+                                <li>Führerscheinstelle</li>
+                                <li>Landratsamt</li>
+                                <li>Bürgerbüro</li>
+                                <li>Rathaus</li>
+                            </ul>
+                            <div class="info-item">
+                                <svg class="icon info-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                    <line x1="16" y1="2" x2="16" y2="6"/>
+                                    <line x1="8" y1="2" x2="8" y2="6"/>
+                                    <line x1="3" y1="10" x2="21" y2="10"/>
+                                </svg>
+                                <div>
+                                    <h4>Frühzeitige Antragstellung</h4>
+                                    <p>Bereits 6 Monate vor dem notwendigen Mindestalter möglich</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <svg class="icon info-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                <div>
+                                    <h4>Gültigkeit des Antrags</h4>
+                                    <p>12 Monate gültig, nach Theorieprüfung weitere 12 Monate</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <svg class="icon info-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="2" y1="12" x2="22" y2="12"/>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                </svg>
+                                <div>
+                                    <h4>Bearbeitungsdauer</h4>
+                                    <p>Ca. 4-6 Wochen (Express: ca. 1 Woche gegen Gebühr)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item fade-in">
+                        <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="acc-2">
+                            <div class="accordion-trigger-content">
+                                <div class="accordion-icon" aria-hidden="true">
+                                    <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                        <polyline points="14 2 14 8 20 8"/>
+                                        <line x1="16" y1="13" x2="8" y2="13"/>
+                                        <line x1="16" y1="17" x2="8" y2="17"/>
+                                        <polyline points="10 9 9 9 8 9"/>
+                                    </svg>
+                                </div>
+                                <h3>Voraussetzungen bei den Behörden</h3>
+                            </div>
+                            <svg class="icon accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-content" id="acc-2" role="region" aria-labelledby="acc-2-heading">
+                            <p style="color: var(--color-slate-600); margin-bottom: var(--space-4);">Für die Antragstellung benötigen Sie folgende Unterlagen:</p>
+                            <ul class="info-list">
+                                <li>Bescheinigung Sofortmaßnahmen am Unfallort</li>
+                                <li>Großer Erste-Hilfe-Kurs (nur bei LKW und Bus)</li>
+                                <li>Sehtest</li>
+                                <li>Biometrisches Passbild</li>
+                                <li>Persönliche Unterschrift auf Vordruck</li>
+                                <li>Ausweiskopie</li>
+                                <li>Ausweiskopie Erziehungsberechtigter (bei Minderjährigen)</li>
+                                <li>Führerscheinkopie Begleiter (nur bei BF17)</li>
+                                <li>Anträge der Führerscheinstelle</li>
+                                <li>Gebühren der Führerscheinstelle</li>
+                            </ul>
+                            <div class="info-note">
+                                <p><strong>Hinweis:</strong> Wir helfen Ihnen gerne bei der Zusammenstellung der Unterlagen.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12 fade-in">
+                    <a href="#infos" class="btn btn-primary btn-lg">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        Jetzt anmelden
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-wave" aria-hidden="true">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0C240 60 480 120 720 60C960 0 1200 60 1200 60V120H0V0Z" fill="var(--color-slate-800)"></path>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-grid">
+                    <!-- Brand Section -->
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <div class="logo-icon" aria-hidden="true">
+                                <svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
+                                    <circle cx="7" cy="17" r="2"/>
+                                    <circle cx="17" cy="17" r="2"/>
+                                </svg>
+                            </div>
+                            <div class="logo-text">
+                                <span class="brand">Fahrschule</span>
+                                <span class="sub">Dorn</span>
+                            </div>
+                        </div>
+                        <p class="footer-tagline">Ihre Fahrschule in Lauchringen für persönliche Betreuung und erfolgreiche Führerscheinausbildung.</p>
+                        <div class="footer-social">
+                            <a href="https://www.facebook.com/groups/150656274984639/" target="_blank" rel="noopener noreferrer" aria-label="Besuchen Sie uns auf Facebook (öffnet in neuem Tab)">
+                                <svg class="icon-lg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <nav class="footer-links-col" aria-label="Schnelllinks">
+                        <h3>Schnelllinks</h3>
+                        <ul class="footer-links">
+                            <li><a href="#start">Start</a></li>
+                            <li><a href="#klassen">FS-Klassen</a></li>
+                            <li><a href="#ausbildung">Ausbildung</a></li>
+                            <li><a href="#infos">Kontakt</a></li>
+                            <li><a href="#behoerden">Behörden-Infos</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Contact Info -->
+                    <div class="footer-contact-col">
+                        <h3>Kontakt</h3>
+                        <address class="footer-contact">
+                            <div class="contact-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                <a href="tel:+4977418086883">07741 - 80 86 83</a>
+                            </div>
+                            <div class="contact-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                <a href="mailto:info@fahrschule-dorn.de">info@fahrschule-dorn.de</a>
+                            </div>
+                            <div class="contact-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <span>Eberwiesenstraße 5, 79787 Lauchringen</span>
+                            </div>
+                        </address>
+                    </div>
+
+                    <!-- Opening Hours -->
+                    <div class="footer-hours">
+                        <h3>Öffnungszeiten</h3>
+                        <dl class="hours-list">
+                            <div class="hours-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                <div>
+                                    <dt>Mo-Fr:</dt>
+                                    <dd>10:00 - 18:00 Uhr</dd>
+                                </div>
+                            </div>
+                            <div class="hours-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                <div>
+                                    <dt>Sa:</dt>
+                                    <dd>10:00 - 13:00 Uhr</dd>
+                                </div>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-inner">
+                    <p class="footer-copyright">&copy; <span id="current-year">2026</span> Fahrschule Dorn. Alle Rechte vorbehalten.</p>
+                    <nav class="footer-legal" aria-label="Rechtliche Links">
+                        <a href="impressum.html">Impressum</a>
+                        <a href="datenschutz.html">Datenschutz</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (() => {
+            'use strict';
+
+            // Set current year in footer
+            const yearEl = document.getElementById('current-year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            // Mobile Navigation Toggle
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuButton && mobileMenu) {
+                menuButton.addEventListener('click', () => {
+                    const isOpen = mobileMenu.classList.toggle('open');
+                    menuButton.setAttribute('aria-expanded', isOpen);
+                    menuButton.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+                });
+
+                // Close mobile menu on link click
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('open');
+                        menuButton.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+
+            // Accordion
+            document.querySelectorAll('.accordion-trigger').forEach(button => {
+                button.addEventListener('click', () => {
+                    const item = button.closest('.accordion-item');
+                    const isOpen = item.classList.contains('open');
+
+                    document.querySelectorAll('.accordion-item').forEach(i => {
+                        i.classList.remove('open');
+                        i.querySelector('.accordion-trigger')?.setAttribute('aria-expanded', 'false');
+                    });
+
+                    if (!isOpen) {
+                        item.classList.add('open');
+                        button.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+
+            // Header scroll effect
+            const header = document.querySelector('.header');
+            if (header) {
+                let ticking = false;
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        requestAnimationFrame(() => {
+                            header.classList.toggle('scrolled', window.scrollY > 50);
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                }, { passive: true });
+            }
+
+            // Scroll animations (Intersection Observer)
+            const fadeElements = document.querySelectorAll('.fade-in');
+            if (fadeElements.length > 0 && 'IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+                fadeElements.forEach(el => observer.observe(el));
+            } else {
+                // Fallback für Browser ohne IntersectionObserver
+                fadeElements.forEach(el => el.classList.add('visible'));
+            }
+        })();
+    </script>
+</body>
+</html>
