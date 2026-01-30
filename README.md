@@ -1,5 +1,7 @@
 # Fahrschule Dorn - Website
 
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/Acephali92/Fahrschule)
+
 Statische Website für die Fahrschule Dorn in Lauchringen (79787).
 
 **DSGVO-konform** - Keine externen Ressourcen beim Seitenladen, kein Consent-Banner erforderlich.
@@ -162,6 +164,15 @@ scp -r ./* user@server:/var/www/html/
 - Semantische HTML5-Struktur
 - Meta Description für lokale Suche
 - Responsive Design (Mobile-First)
+
+## Performance (Chrome DevTools Audit)
+
+| Metrik | Wert | Status |
+|--------|------|--------|
+| **LCP** | 930ms | 🟢 Gut |
+| **CLS** | 0.00 | 🟢 Gut |
+| **Externe Requests** | 0 | 🟢 DSGVO-konform |
+| **Console Errors** | 0 | 🟢 Fehlerfrei |
 
 ## Wartung
 

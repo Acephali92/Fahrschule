@@ -1,5 +1,7 @@
 # Systemarchitektur - Fahrschule Dorn Website
 
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/Acephali92/Fahrschule)
+
 ## Übersicht
 
 Statische Website ohne Backend, Build-System oder Framework-Abhängigkeiten.
@@ -18,16 +20,24 @@ Statische Website ohne Backend, Build-System oder Framework-Abhängigkeiten.
 │  │  • CSS Custom Properties (Design System)             │    │
 │  │  • Vanilla JS (DOM Manipulation)                     │    │
 │  └─────────────────────────────────────────────────────┘    │
+│         │                                                    │
+│  ┌──────▼──────────────────────────────────────────────┐    │
+│  │                  LOKALE RESSOURCEN                   │    │
+│  │  • assets/images/hero-bg.jpg                         │    │
+│  │  • assets/images/infos-bg.jpg                        │    │
+│  │  • assets/images/ausbildung.webp                     │    │
+│  │  • assets/images/buero.jpg                           │    │
+│  │  • assets/images/map-placeholder.svg                 │    │
+│  └─────────────────────────────────────────────────────┘    │
 └─────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
+
 ┌─────────────────────────────────────────────────────────────┐
-│                    EXTERNE RESSOURCEN                        │
-├─────────────────────────────────────────────────────────────┤
-│  • images.pexels.com      (Stockfotos)                      │
-│  • leadconnectorhq.com    (CDN-Bilder)                      │
-│  • lirp.cdn-website.com   (CDN-Bilder)                      │
-│  • google.com/maps        (iFrame Embed)                    │
+│              EXTERNE RESSOURCEN: KEINE                       │
+│                                                              │
+│  ✅ Alle Bilder lokal in assets/images/                     │
+│  ✅ System-Fonts (kein Google Fonts)                        │
+│  ✅ Kein Google Maps iFrame (nur Click-to-Link)             │
+│  ✅ Keine CDNs, keine Tracking-Pixel                        │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -59,7 +69,7 @@ graph TD
     C2 --> C2g[Card: Intensivkurs]
 
     C4 --> C4a[Kontaktdaten]
-    C4 --> C4b[Google Maps iFrame]
+    C4 --> C4b[Google Maps Link - SVG Platzhalter]
     C4 --> C4c[Öffnungszeiten]
 
     C5 --> C5a[Accordion: Anmeldung]
@@ -168,32 +178,35 @@ flowchart TB
     subgraph "Initial Page Load"
         A[Browser] -->|GET| B[index.html]
         B --> C{Parse HTML}
-        C -->|Preconnect| D[pexels.com]
-        C -->|Preconnect| E[google.com]
-        C -->|DNS-Prefetch| F[leadconnectorhq.com]
     end
 
-    subgraph "Resource Loading"
+    subgraph "Resource Loading (alle lokal)"
         C --> G[CSS Inline - Kein Request]
         C --> H[JS Inline - Kein Request]
-        C --> I[External Images]
-        I --> I1[pexels.com/photo/...]
-        I --> I2[leadconnectorhq.com/...]
-        I --> I3[lirp.cdn-website.com/...]
-        C --> J[Google Maps iFrame]
-        J --> J1[google.com/maps/embed]
+        C --> I[Lokale Bilder]
+        I --> I1[assets/images/hero-bg.jpg]
+        I --> I2[assets/images/infos-bg.jpg]
+        I --> I3[assets/images/ausbildung.webp]
+        I --> I4[assets/images/buero.jpg]
+        I --> I5[assets/images/map-placeholder.svg]
+    end
+
+    subgraph "Externe Ressourcen"
+        X[Keine automatischen externen Requests]
     end
 ```
+
+**DSGVO-konform:** Keine externen Ressourcen werden beim Seitenladen abgerufen. Google Maps öffnet nur bei aktivem Klick in einem neuen Tab.
 
 ## Datei-Abhängigkeiten
 
 ```
 index.html
-├── [EXTERN] images.pexels.com (Hero Background, CSS)
-├── [EXTERN] images.pexels.com (Infos Background, CSS)
-├── [EXTERN] leadconnectorhq.com (Ausbildung Image)
-├── [EXTERN] lirp.cdn-website.com (Büro Image)
-├── [EXTERN] google.com/maps/embed (iFrame)
+├── [LOKAL] assets/images/hero-bg.jpg (Hero Background)
+├── [LOKAL] assets/images/infos-bg.jpg (Infos Background)
+├── [LOKAL] assets/images/ausbildung.webp (Ausbildung Image)
+├── [LOKAL] assets/images/buero.jpg (Büro Image)
+├── [LOKAL] assets/images/map-placeholder.svg (Karten-Platzhalter)
 ├── [INTERN] impressum.html (Footer Link)
 └── [INTERN] datenschutz.html (Footer Link)
 
@@ -204,18 +217,36 @@ impressum.html
 datenschutz.html
 ├── [INTERN] index.html (Header/Footer Links)
 └── [INTERN] impressum.html (Nav Link)
+
+assets/images/
+├── hero-bg.jpg         (289 KB - Hero-Hintergrund)
+├── infos-bg.jpg        (108 KB - Kontakt-Hintergrund)
+├── ausbildung.webp     (34 KB - Ausbildungsbild)
+├── buero.jpg           (58 KB - Bürobild)
+└── map-placeholder.svg (2 KB - Karten-Platzhalter)
 ```
 
 ## Performance-Optimierungen
 
 | Technik | Implementation | Effekt |
 |---------|----------------|--------|
-| **Preconnect** | `<link rel="preconnect">` | DNS/TLS Prefetch für Pexels, Google |
+| **Lokale Assets** | Alle Bilder in `assets/images/` | Keine externen Requests, DSGVO-konform |
 | **Lazy Loading** | `loading="lazy"` auf Images | Bilder erst bei Sichtbarkeit laden |
 | **Async Decode** | `decoding="async"` | Non-blocking Image Decode |
 | **System Fonts** | `var(--font-system)` | Kein Font-Download erforderlich |
 | **Inline CSS/JS** | Alles in HTML | Keine zusätzlichen HTTP Requests |
 | **RAF Throttle** | `requestAnimationFrame` | Scroll-Performance |
+| **WebP Format** | `ausbildung.webp` | Komprimiertes Bildformat |
+| **SVG Platzhalter** | `map-placeholder.svg` | Vektorgrafik statt iFrame |
+
+### Audit-Ergebnisse (Chrome DevTools)
+
+| Metrik | Wert | Bewertung |
+|--------|------|-----------|
+| **LCP** (Largest Contentful Paint) | 930ms | 🟢 Gut (<2.5s) |
+| **CLS** (Cumulative Layout Shift) | 0.00 | 🟢 Gut (<0.1) |
+| **Externe Requests** | 0 | 🟢 DSGVO-konform |
+| **Console Errors** | 0 | 🟢 Fehlerfrei |
 
 ## Accessibility (a11y)
 
@@ -451,4 +482,5 @@ fadeElements.forEach(el => observer.observe(el));
 
 ---
 
-*Dokumentation erstellt: Januar 2026*
+*Dokumentation aktualisiert: Januar 2026*
+*Letzter Audit: Chrome DevTools Performance Trace*

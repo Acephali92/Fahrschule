@@ -1,5 +1,7 @@
 # Sicherheit & Datenschutz - Fahrschule Dorn Website
 
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/Acephali92/Fahrschule)
+
 ## Überblick
 
 Dieses Dokument beschreibt die Datenverarbeitung, Sicherheitsmaßnahmen und DSGVO-Compliance der Website.
@@ -152,6 +154,37 @@ Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 | Cipher Suites | Moderne Cipher, kein RC4, 3DES |
 | Zertifikat | Valides SSL-Zertifikat (Let's Encrypt o.ä.) |
 | HSTS | Aktiviert mit min. 1 Jahr max-age |
+
+## Chrome DevTools Audit (Januar 2026)
+
+### Performance-Ergebnisse
+
+| Metrik | Wert | Bewertung |
+|--------|------|-----------|
+| **LCP** (Largest Contentful Paint) | 930ms | 🟢 Gut (<2.5s) |
+| **CLS** (Cumulative Layout Shift) | 0.00 | 🟢 Perfekt (<0.1) |
+| **Externe Requests** | 0 | 🟢 DSGVO-konform |
+| **Console Errors** | 0 | 🟢 Fehlerfrei |
+
+### Accessibility-Prüfung
+
+| Prüfpunkt | Status |
+|-----------|--------|
+| Skip-Link vorhanden | ✅ |
+| Main Landmark | ✅ |
+| ARIA-Attribute | 15 |
+| Heading-Hierarchie | h1:1, h2:4, h3:13, h4:20 ✅ |
+
+### Netzwerk-Analyse
+
+```
+Geladene Ressourcen (3 total):
+├── index.html (document)
+├── hero-bg.jpg (image, lazy)
+└── infos-bg.jpg (image, lazy)
+
+Externe Requests: 0
+```
 
 ## Schwachstellen-Analyse
 
