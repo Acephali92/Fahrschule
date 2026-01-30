@@ -11,14 +11,56 @@
     <meta property="og:description" content="Ihre Fahrschule in Lauchringen für alle Führerscheinklassen mit persönlicher Betreuung.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.fahrschule-dorn.de">
-    <meta property="og:image" content="https://images.pexels.com/photos/18285509/pexels-photo-18285509/free-photo-of-bmw-m2-in-training-on-circuit.jpeg">
+    <meta property="og:image" content="assets/images/hero-bg.jpg">
     <title>Fahrschule Dorn - Lauchringen | Führerschein mit persönlicher Betreuung</title>
-    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232563eb'/><text x='50' y='65' text-anchor='middle' fill='white' font-size='35' font-family='system-ui'>FD</text></svg>" type="image/svg+xml">
 
-    <!-- Preconnect für externe Ressourcen -->
-    <link rel="preconnect" href="https://images.pexels.com" crossorigin>
-    <link rel="preconnect" href="https://www.google.com" crossorigin>
-    <link rel="dns-prefetch" href="https://images.leadconnectorhq.com">
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "DrivingSchool",
+        "name": "Fahrschule Dorn",
+        "description": "Fahrschule in Lauchringen für PKW, Motorrad, LKW und mehr. Persönliche Betreuung und individuelle Ausbildung.",
+        "url": "https://www.fahrschule-dorn.de",
+        "telephone": "+49-7741-8086883",
+        "email": "info@fahrschule-dorn.de",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Eberwiesenstraße 5",
+            "addressLocality": "Lauchringen",
+            "postalCode": "79787",
+            "addressCountry": "DE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "47.620",
+            "longitude": "8.348"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "10:00",
+                "closes": "18:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "10:00",
+                "closes": "13:00"
+            }
+        ],
+        "priceRange": "$$",
+        "areaServed": {
+            "@type": "City",
+            "name": "Lauchringen"
+        },
+        "sameAs": [
+            "https://www.facebook.com/groups/150656274984639/"
+        ]
+    }
+    </script>
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232563eb'/><text x='50' y='65' text-anchor='middle' fill='white' font-size='35' font-family='system-ui'>FD</text></svg>" type="image/svg+xml">
 
     <style>
         /* ============================================
@@ -532,7 +574,7 @@
             position: relative;
             overflow: hidden;
             background: linear-gradient(135deg, rgba(30, 64, 175, 0.85), rgba(37, 99, 235, 0.85)),
-                        url('https://images.pexels.com/photos/18285509/pexels-photo-18285509/free-photo-of-bmw-m2-in-training-on-circuit.jpeg?auto=compress&cs=tinysrgb&w=1260');
+                        url('assets/images/hero-bg.jpg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -758,7 +800,7 @@
            ============================================ */
         .infos-section {
             background: linear-gradient(135deg, rgba(30, 64, 175, 0.92), rgba(37, 99, 235, 0.92)),
-                        url('https://images.pexels.com/photos/5120103/pexels-photo-5120103.jpeg?auto=compress&cs=tinysrgb&w=1260');
+                        url('assets/images/infos-bg.jpg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -1679,7 +1721,7 @@
                         <a href="#infos" class="btn btn-primary mt-6">Mehr erfahren</a>
                     </div>
                     <div class="ausbildung-image fade-in">
-                        <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_800/u_https://assets.cdn.filesafe.space/oEFpUcVZG3buxhUEKOlw/media/203b8f87-2980-4a9f-81b5-6ec095e5ae4d.png" alt="Fahrlehrer gibt Fahrschülerin Anweisungen im Auto" width="800" height="533" loading="lazy" decoding="async">
+                        <img src="assets/images/ausbildung.webp" alt="Fahrlehrer gibt Fahrschülerin Anweisungen im Auto" width="800" height="533" loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>
@@ -1723,7 +1765,9 @@
                         </address>
 
                         <div class="map-container">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.493!2d8.348!3d47.620!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47903a11f5d!2sEberwiesenstra%C3%9Fe%205%2C%2079787%20Lauchringen!5e0!3m2!1sde!2sde!4v1700000000000&zoom=15" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps Standort: Fahrschule Dorn, Eberwiesenstraße 5, 79787 Lauchringen"></iframe>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Eberwiesenstra%C3%9Fe+5%2C+79787+Lauchringen" target="_blank" rel="noopener noreferrer" aria-label="Standort in Google Maps öffnen (neuer Tab)" style="display: block;">
+                                <img src="assets/images/map-placeholder.svg" alt="Kartenansicht: Fahrschule Dorn, Eberwiesenstraße 5, 79787 Lauchringen" width="600" height="300" loading="lazy" decoding="async" style="width: 100%; height: auto; border-radius: var(--radius-lg);">
+                            </a>
                         </div>
                     </div>
 
@@ -1755,7 +1799,7 @@
                         </dl>
 
                         <div style="border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-xl); margin-top: var(--space-6);">
-                            <img src="https://lirp.cdn-website.com/d7067f0b/dms3rep/multi/opt/decorative+office+building+in+Buford+GA-640w.jpg" alt="Modernes Fahrschul-Büro" width="640" height="360" loading="lazy" decoding="async" style="width: 100%; height: 200px; object-fit: cover;">
+                            <img src="assets/images/buero.jpg" alt="Modernes Fahrschul-Büro" width="640" height="360" loading="lazy" decoding="async" style="width: 100%; height: 200px; object-fit: cover;">
                         </div>
 
                         <p class="text-center mt-6 opacity-90" style="font-size: var(--text-lg);">Wir freuen uns auf Ihren Besuch!</p>
