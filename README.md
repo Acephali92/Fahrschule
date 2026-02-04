@@ -32,6 +32,8 @@ Fahrschule/
 │       └── map-placeholder.svg # Karten-Platzhalter
 ├── _headers                # Netlify Security Headers (optional)
 ├── .htaccess               # Apache Security Headers (optional)
+├── robots.txt              # Crawler-Regeln (Allow all)
+├── sitemap.xml             # XML-Sitemap für Suchmaschinen
 ├── README.md               # Diese Datei
 ├── ARCHITECTURE.md         # Systemarchitektur
 └── SECURITY.md             # Sicherheit & Datenschutz
@@ -164,6 +166,8 @@ scp -r ./* user@server:/var/www/html/
 - Semantische HTML5-Struktur
 - Meta Description für lokale Suche
 - Responsive Design (Mobile-First)
+- robots.txt (erlaubt alle Crawler)
+- XML-Sitemap
 
 ## Performance (Chrome DevTools Audit)
 
