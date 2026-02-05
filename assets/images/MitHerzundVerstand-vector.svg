@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180" width="400" height="180">
+  <defs>
+    <style>
+      .draw-path {
+        fill: none;
+        stroke: #1e40af;
+        stroke-width: 3;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .draw-path-thin {
+        fill: none;
+        stroke: #1e40af;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .heart-path {
+        fill: none;
+        stroke: #dc2626;
+        stroke-width: 3;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+
+  <!-- "Mit" - handwritten style paths -->
+  <g id="word-mit">
+    <!-- M -->
+    <path class="draw-path" d="M 20 70 L 20 30 L 35 55 L 50 30 L 50 70" />
+    <!-- i -->
+    <path class="draw-path" d="M 62 45 L 62 70" />
+    <path class="draw-path" d="M 62 32 L 62 35" />
+    <!-- t -->
+    <path class="draw-path" d="M 78 35 L 78 70 Q 78 75 85 75" />
+    <path class="draw-path-thin" d="M 70 45 L 86 45" />
+  </g>
+
+  <!-- Heart symbol -->
+  <g id="heart">
+    <path class="heart-path" d="M 115 50
+      C 115 40, 105 30, 95 40
+      C 85 50, 95 65, 115 80
+      C 135 65, 145 50, 135 40
+      C 125 30, 115 40, 115 50 Z" />
+  </g>
+
+  <!-- "Herz" -->
+  <g id="word-herz">
+    <!-- H -->
+    <path class="draw-path" d="M 160 70 L 160 30 M 160 50 L 180 50 M 180 30 L 180 70" />
+    <!-- e -->
+    <path class="draw-path" d="M 190 55 Q 190 45, 200 45 Q 210 45, 210 55 L 190 55 Q 190 70, 205 70" />
+    <!-- r -->
+    <path class="draw-path" d="M 220 70 L 220 45 M 220 55 Q 225 45, 235 47" />
+    <!-- z -->
+    <path class="draw-path" d="M 245 45 L 265 45 L 245 70 L 265 70" />
+  </g>
+
+  <!-- "und" -->
+  <g id="word-und">
+    <!-- u -->
+    <path class="draw-path" d="M 55 105 L 55 125 Q 55 135, 70 135 L 70 105" />
+    <!-- n -->
+    <path class="draw-path" d="M 82 135 L 82 115 Q 82 105, 95 105 L 95 135" />
+    <!-- d -->
+    <path class="draw-path" d="M 120 135 Q 107 135, 107 120 Q 107 105, 120 105 M 120 95 L 120 135" />
+  </g>
+
+  <!-- "Verstand" -->
+  <g id="word-verstand">
+    <!-- V -->
+    <path class="draw-path" d="M 145 95 L 160 135 L 175 95" />
+    <!-- e -->
+    <path class="draw-path" d="M 185 115 Q 185 105, 195 105 Q 205 105, 205 115 L 185 115 Q 185 135, 200 135" />
+    <!-- r -->
+    <path class="draw-path" d="M 215 135 L 215 105 M 215 115 Q 220 105, 230 107" />
+    <!-- s -->
+    <path class="draw-path" d="M 250 108 Q 240 105, 240 115 Q 240 120, 250 122 Q 260 125, 255 135 Q 250 138, 240 135" />
+    <!-- t -->
+    <path class="draw-path" d="M 270 100 L 270 135 Q 270 140, 277 140" />
+    <path class="draw-path-thin" d="M 262 110 L 278 110" />
+    <!-- a -->
+    <path class="draw-path" d="M 300 135 Q 287 135, 287 120 Q 287 105, 300 105 Q 310 105, 310 115 L 310 135" />
+    <!-- n -->
+    <path class="draw-path" d="M 322 135 L 322 115 Q 322 105, 335 105 L 335 135" />
+    <!-- d -->
+    <path class="draw-path" d="M 360 135 Q 347 135, 347 120 Q 347 105, 360 105 M 360 95 L 360 135" />
+  </g>
+
+  <!-- Decorative underline swirl -->
+  <path class="draw-path-thin" id="underline" d="M 30 155 Q 100 160, 200 150 Q 300 140, 370 155" />
+</svg>
