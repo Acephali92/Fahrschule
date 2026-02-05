@@ -403,53 +403,68 @@
             transform: scaleX(1);
         }
 
-        .nav-dropdown {
-            position: relative;
-        }
-
-        .nav-dropdown-menu {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            min-width: 160px;
-            background: white;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-xl);
-            padding: var(--space-2);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(8px);
-            transition: all var(--transition-base);
-        }
-
-        .nav-dropdown:hover .nav-dropdown-menu,
-        .nav-dropdown:focus-within .nav-dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .nav-dropdown-item {
-            display: block;
-            padding: var(--space-2) var(--space-4);
-            border-radius: var(--radius-md);
-            color: var(--color-slate-600);
-            transition: background var(--transition-fast);
-        }
-
-        .nav-dropdown-item:hover {
-            background: var(--color-slate-50);
-            color: var(--color-primary-600);
-        }
-
-        .mobile-controls {
-            display: flex;
+        /* Header Actions (Social + Phone) */
+        .header-actions {
+            display: none;
             align-items: center;
             gap: var(--space-3);
         }
 
         @media (min-width: 1024px) {
-            .mobile-controls .menu-toggle { display: none; }
+            .header-actions { display: flex; }
+        }
+
+        .header-social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-full);
+            color: var(--color-slate-500);
+            background: var(--color-slate-100);
+            transition: all var(--transition-base);
+        }
+
+        .header-social-link:hover {
+            color: white;
+            background: #1877f2;
+            transform: translateY(-2px);
+        }
+
+        .header-phone-btn {
+            white-space: nowrap;
+        }
+
+        .header-phone-btn .phone-text {
+            display: inline;
+        }
+
+        /* Mobile Controls */
+        .mobile-controls {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .mobile-social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-full);
+            color: #1877f2;
+            background: var(--color-slate-100);
+            transition: all var(--transition-base);
+        }
+
+        .mobile-social-link:hover {
+            background: var(--color-slate-200);
+        }
+
+        @media (min-width: 1024px) {
+            .mobile-controls { display: none; }
         }
 
         .menu-toggle {
@@ -499,8 +514,60 @@
             background: var(--color-slate-50);
         }
 
+        .mobile-nav-cta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            background: var(--color-primary-50);
+            color: var(--color-primary-700);
+            margin-top: var(--space-2);
+            border: 1px solid var(--color-primary-200);
+        }
+
+        .mobile-nav-cta:hover {
+            background: var(--color-primary-100);
+        }
+
         @media (min-width: 1024px) {
             .mobile-nav { display: none !important; }
+        }
+
+        /* Sticky Phone Button for Mobile */
+        .sticky-phone-btn {
+            position: fixed;
+            bottom: var(--space-6);
+            right: var(--space-4);
+            z-index: 90;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--color-accent-500), var(--color-accent-600));
+            color: white;
+            border-radius: var(--radius-full);
+            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
+            transition: all var(--transition-base);
+            animation: pulse-phone 2s infinite;
+        }
+
+        .sticky-phone-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(34, 197, 94, 0.5);
+        }
+
+        .sticky-phone-btn svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        @keyframes pulse-phone {
+            0%, 100% { box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4); }
+            50% { box-shadow: 0 4px 30px rgba(34, 197, 94, 0.6); }
+        }
+
+        @media (min-width: 1024px) {
+            .sticky-phone-btn { display: none; }
         }
 
         /* ============================================
@@ -514,8 +581,15 @@
             padding: var(--space-3) var(--space-6);
             font-weight: 600;
             border-radius: var(--radius-full);
-            transition: all var(--transition-base);
+            transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1),
+                        box-shadow 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
             cursor: pointer;
+            will-change: transform, box-shadow;
+        }
+
+        .btn:focus-visible {
+            outline: 2px solid var(--color-primary-600);
+            outline-offset: 4px;
         }
 
         .btn-primary {
@@ -525,8 +599,12 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px 0 rgba(37, 99, 235, 0.45);
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .btn-primary:focus-visible {
+            outline-color: var(--color-primary-600);
         }
 
         .btn-accent {
@@ -536,8 +614,12 @@
         }
 
         .btn-accent:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px 0 rgba(34, 197, 94, 0.45);
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .btn-accent:focus-visible {
+            outline-color: var(--color-accent-500);
         }
 
         .btn-outline {
@@ -549,6 +631,12 @@
         .btn-outline:hover {
             background: var(--color-primary-600);
             color: white;
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .btn-outline:focus-visible {
+            outline-color: var(--color-primary-600);
         }
 
         .btn-sm {
@@ -635,6 +723,133 @@
             animation: fadeInUp 0.8s ease 0.3s backwards;
         }
 
+        /* Hero CTA Wrapper with Slogan positioning */
+        .hero-cta-wrapper {
+            position: relative;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        /* Slogan positioned to the right of CTA */
+        .hero-slogan {
+            --slogan-tilt: -6deg;
+            position: absolute;
+            top: 50%;
+            left: calc(100% + 16px);
+            transform: translateY(-50%) rotate(var(--slogan-tilt));
+            width: 140px;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        /* On very small screens, hide slogan to prevent overlap */
+        @media (max-width: 479px) {
+            .hero-slogan {
+                display: none;
+            }
+        }
+
+        @media (min-width: 480px) {
+            .hero-slogan {
+                width: 150px;
+                left: calc(100% + 20px);
+                top: 40%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero-slogan {
+                width: 170px;
+                left: calc(100% + 30px);
+                top: 30%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero-slogan {
+                width: 190px;
+                left: calc(100% + 40px);
+                top: 20%;
+            }
+        }
+
+        .hero-slogan-bg {
+            position: absolute;
+            inset: -8px;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: var(--radius-xl);
+            box-shadow:
+                0 4px 20px rgba(0, 0, 0, 0.15),
+                0 2px 6px rgba(0, 0, 0, 0.1);
+            z-index: -1;
+        }
+
+        .hero-slogan-svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            padding: var(--space-2);
+        }
+
+        /* Path styles for hero slogan */
+        .hero-slogan-svg .draw-path {
+            fill: none;
+            stroke: var(--color-primary-800);
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .hero-slogan-svg .draw-path-thin {
+            fill: none;
+            stroke: var(--color-primary-800);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .hero-slogan-svg .heart-path {
+            fill: none;
+            stroke: var(--color-red-500);
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Stroke animation setup for hero slogan */
+        .hero-slogan-svg .draw-path,
+        .hero-slogan-svg .draw-path-thin,
+        .hero-slogan-svg .heart-path {
+            stroke-dasharray: var(--path-length, 300);
+            stroke-dashoffset: var(--path-length, 300);
+            opacity: 0;
+        }
+
+        /* Animation triggered by .animate class */
+        .hero-slogan-svg.animate .draw-path,
+        .hero-slogan-svg.animate .draw-path-thin,
+        .hero-slogan-svg.animate .heart-path {
+            opacity: 1;
+            animation: drawStroke 1.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+        }
+
+        /* Staggered delays */
+        .hero-slogan-svg.animate #word-mit .draw-path,
+        .hero-slogan-svg.animate #word-mit .draw-path-thin { animation-delay: 0.3s; }
+        .hero-slogan-svg.animate #heart .heart-path { animation-delay: 0.6s; animation-duration: 1s; }
+        .hero-slogan-svg.animate #word-herz .draw-path { animation-delay: 0.9s; }
+        .hero-slogan-svg.animate #word-und .draw-path { animation-delay: 1.3s; }
+        .hero-slogan-svg.animate #word-verstand .draw-path,
+        .hero-slogan-svg.animate #word-verstand .draw-path-thin { animation-delay: 1.6s; }
+        .hero-slogan-svg.animate #underline { animation-delay: 2.2s; animation-duration: 0.6s; }
+
+        @keyframes drawStroke {
+            0% { stroke-dashoffset: var(--path-length, 300); }
+            100% { stroke-dashoffset: 0; }
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -690,19 +905,194 @@
         }
 
         /* ============================================
+           PARTNER TEASER SECTION
+           ============================================ */
+        .partner-teaser {
+            background: linear-gradient(135deg, var(--color-primary-50), var(--color-primary-100));
+            border: 2px solid var(--color-primary-200);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-6) var(--space-8);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+            transition: all var(--transition-base);
+        }
+
+        @media (min-width: 768px) {
+            .partner-teaser {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+        .partner-teaser:hover {
+            border-color: var(--color-primary-400);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .partner-teaser-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-700));
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .partner-teaser-content {
+            flex: 1;
+        }
+
+        .partner-teaser-title {
+            font-size: var(--text-lg);
+            font-weight: 700;
+            color: var(--color-primary-800);
+            margin-bottom: var(--space-2);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .partner-teaser-title .badge {
+            font-size: var(--text-xs);
+            font-weight: 600;
+            background: var(--color-primary-600);
+            color: white;
+            padding: var(--space-1) var(--space-2);
+            border-radius: var(--radius-full);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .partner-teaser-text {
+            font-size: var(--text-sm);
+            color: var(--color-slate-600);
+            line-height: var(--leading-relaxed);
+            margin: 0;
+        }
+
+        .partner-teaser-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-3) var(--space-5);
+            background: var(--color-primary-600);
+            color: white;
+            font-weight: 600;
+            font-size: var(--text-sm);
+            border-radius: var(--radius-full);
+            transition: all var(--transition-base);
+            white-space: nowrap;
+        }
+
+        .partner-teaser-btn:hover {
+            background: var(--color-primary-700);
+            transform: translateX(4px);
+        }
+
+        .partner-teaser-btn svg {
+            transition: transform var(--transition-base);
+        }
+
+        .partner-teaser-btn:hover svg {
+            transform: translateX(2px);
+        }
+
+        /* Compact variant for Ausbildung section */
+        .partner-teaser-compact {
+            background: var(--color-slate-50);
+            border: 1px solid var(--color-slate-200);
+            border-radius: var(--radius-xl);
+            padding: var(--space-4) var(--space-5);
+            margin-top: var(--space-6);
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            transition: all var(--transition-base);
+        }
+
+        .partner-teaser-compact:hover {
+            background: var(--color-primary-50);
+            border-color: var(--color-primary-200);
+        }
+
+        .partner-teaser-compact .partner-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--color-primary-100);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary-600);
+            flex-shrink: 0;
+        }
+
+        .partner-teaser-compact .partner-text {
+            flex: 1;
+            font-size: var(--text-sm);
+            color: var(--color-slate-600);
+        }
+
+        .partner-teaser-compact .partner-text strong {
+            color: var(--color-slate-800);
+        }
+
+        .partner-teaser-compact .partner-link {
+            color: var(--color-primary-600);
+            font-weight: 600;
+            font-size: var(--text-sm);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-1);
+            transition: color var(--transition-fast);
+        }
+
+        .partner-teaser-compact .partner-link:hover {
+            color: var(--color-primary-700);
+        }
+
+        /* ============================================
            CARDS
            ============================================ */
         .card {
+            position: relative;
             background: white;
             border-radius: var(--radius-2xl);
             box-shadow: var(--shadow-md);
             overflow: hidden;
-            transition: all var(--transition-slow);
+            transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1),
+                        box-shadow 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+            will-change: transform, box-shadow;
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--radius-2xl);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+            pointer-events: none;
         }
 
         .card:hover {
-            box-shadow: var(--shadow-xl);
-            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            transform: translateY(-6px) scale(1.02);
+        }
+
+        .card:hover::after {
+            opacity: 1;
+        }
+
+        .card:focus-visible {
+            outline: 2px solid var(--color-primary-600);
+            outline-offset: 4px;
         }
 
         .card-body {
@@ -748,6 +1138,178 @@
             font-size: var(--text-sm);
             color: var(--color-slate-500);
             line-height: var(--leading-relaxed);
+        }
+
+        /* ============================================
+           LICENSE CARD SYSTEM (Interactive)
+           ============================================ */
+        .license-card {
+            position: relative;
+            background: white;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            min-height: 180px;
+            transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1),
+                        box-shadow 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+            will-change: transform, box-shadow;
+        }
+
+        .license-card:hover {
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            transform: translateY(-6px) scale(1.02);
+        }
+
+        .license-card:focus-visible {
+            outline: 2px solid var(--color-primary-600);
+            outline-offset: 4px;
+        }
+
+        .license-card__header {
+            padding: var(--space-6);
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+        }
+
+        .license-card__icon {
+            width: 64px;
+            height: 64px;
+            border-radius: var(--radius-full);
+            background: var(--color-primary-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary-600);
+            flex-shrink: 0;
+        }
+
+        .license-card__icon svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .license-card__title {
+            font-size: var(--text-2xl);
+            font-weight: 800;
+            color: var(--color-slate-800);
+            line-height: 1.1;
+        }
+
+        .license-card__subtitle {
+            font-size: var(--text-sm);
+            color: var(--color-slate-500);
+            margin-top: var(--space-1);
+        }
+
+        /* Detail Tray - Glassmorphism */
+        .license-card__tray {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            padding: var(--space-4) var(--space-5);
+            transform: translateY(100%);
+            transition: transform 400ms cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .license-card__detail {
+            display: flex;
+            justify-content: space-around;
+            gap: var(--space-3);
+        }
+
+        .license-card__stat {
+            text-align: center;
+            flex: 1;
+        }
+
+        .license-card__stat-value {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--color-primary-600);
+        }
+
+        .license-card__stat-label {
+            font-size: 0.65rem;
+            color: var(--color-slate-500);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 2px;
+        }
+
+        /* Toggle Button (Mobile) */
+        .license-card__toggle {
+            position: absolute;
+            bottom: var(--space-3);
+            right: var(--space-3);
+            background: var(--color-primary-600);
+            color: white;
+            border: none;
+            border-radius: var(--radius-full);
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 300ms cubic-bezier(0.25, 1, 0.5, 1),
+                        background 200ms ease;
+            z-index: 10;
+        }
+
+        .license-card__toggle:hover {
+            background: var(--color-primary-700);
+        }
+
+        .license-card__toggle:focus-visible {
+            outline: 2px solid var(--color-primary-600);
+            outline-offset: 4px;
+        }
+
+        .license-card.is-active .license-card__toggle {
+            transform: rotate(45deg);
+        }
+
+        /* Desktop: Hover to reveal */
+        @media (min-width: 768px) {
+            .license-card:hover .license-card__tray,
+            .license-card:focus-within .license-card__tray {
+                transform: translateY(0);
+            }
+
+            .license-card__toggle {
+                display: none;
+            }
+        }
+
+        /* Mobile: Tap to expand */
+        @media (max-width: 767px) {
+            .license-card.is-active .license-card__tray {
+                transform: translateY(0);
+            }
+
+            .license-card {
+                min-height: 160px;
+            }
+
+            .license-card__header {
+                padding: var(--space-5);
+            }
+
+            .license-card__icon {
+                width: 56px;
+                height: 56px;
+            }
+
+            .license-card__icon svg {
+                width: 28px;
+                height: 28px;
+            }
         }
 
         /* ============================================
@@ -1332,6 +1894,103 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
+        /* Footer Partner Section */
+        .footer-partner {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(37, 99, 235, 0.25));
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            margin-bottom: var(--space-8);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+            transition: all var(--transition-base);
+        }
+
+        @media (min-width: 768px) {
+            .footer-partner {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        .footer-partner:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(37, 99, 235, 0.3));
+        }
+
+        .footer-partner-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-600));
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .footer-partner-content {
+            flex: 1;
+        }
+
+        .footer-partner-title {
+            font-size: var(--text-lg);
+            font-weight: 700;
+            color: white;
+            margin-bottom: var(--space-2);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            flex-wrap: wrap;
+            padding-bottom: 0;
+        }
+
+        .footer-partner-title::after {
+            display: none;
+        }
+
+        .footer-partner-title .badge {
+            font-size: var(--text-xs);
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: var(--space-1) var(--space-2);
+            border-radius: var(--radius-full);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-partner-text {
+            font-size: var(--text-base);
+            color: var(--color-slate-200);
+            line-height: var(--leading-relaxed);
+            margin: 0;
+        }
+
+        .footer-partner-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-3) var(--space-6);
+            background: white;
+            color: var(--color-primary-700);
+            font-weight: 600;
+            font-size: var(--text-sm);
+            border-radius: var(--radius-full);
+            transition: all var(--transition-base);
+            white-space: nowrap;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .footer-partner-btn:hover {
+            background: var(--color-primary-50);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
         /* ============================================
            UTILITY CLASSES
            ============================================ */
@@ -1411,38 +2070,36 @@
 
                 <nav class="nav-desktop" role="navigation" aria-label="Hauptnavigation">
                     <a href="#start" class="nav-link">Start</a>
-                    <a href="#klassen" class="nav-link">FS-Klassen</a>
+                    <a href="#klassen" class="nav-link">Führerscheinklassen</a>
                     <a href="#ausbildung" class="nav-link">Ausbildung</a>
                     <a href="#infos" class="nav-link">Infos</a>
                     <a href="#behoerden" class="nav-link">Behörden</a>
-                    <a href="https://www.facebook.com/groups/150656274984639/" target="_blank" rel="noopener noreferrer" class="nav-link flex items-center gap-2">
-                        <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-                        </svg>
-                        Facebook
-                        <span class="sr-only">(öffnet in neuem Tab)</span>
-                    </a>
-                    <div class="nav-dropdown">
-                        <button type="button" class="nav-link flex items-center gap-2" aria-expanded="false" aria-haspopup="menu">
-                            Mehr
-                            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                <polyline points="6 9 12 15 18 9"/>
-                            </svg>
-                        </button>
-                        <div class="nav-dropdown-menu" role="menu">
-                            <a href="#news" class="nav-dropdown-item" role="menuitem">NEWS</a>
-                            <a href="#links" class="nav-dropdown-item" role="menuitem">Links</a>
-                        </div>
-                    </div>
-                    <a href="#infos" class="btn btn-primary btn-sm" style="margin-left: var(--space-4);">
-                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                        </svg>
+                    <a href="#infos" class="btn btn-primary btn-sm" style="margin-left: var(--space-2);">
                         Kontakt
                     </a>
                 </nav>
 
+                <!-- Header Actions: Social + Phone -->
+                <div class="header-actions">
+                    <a href="https://www.facebook.com/groups/150656274984639/" target="_blank" rel="noopener noreferrer" class="header-social-link" aria-label="Facebook (öffnet in neuem Tab)">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                    </a>
+                    <a href="tel:+4977418086883" class="btn btn-accent btn-sm header-phone-btn">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <span class="phone-text">Anruf</span>
+                    </a>
+                </div>
+
                 <div class="mobile-controls">
+                    <a href="https://www.facebook.com/groups/150656274984639/" target="_blank" rel="noopener noreferrer" class="mobile-social-link" aria-label="Facebook (öffnet in neuem Tab)">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                    </a>
                     <button type="button" class="menu-toggle" id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">
                         <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <line x1="3" y1="12" x2="21" y2="12"/>
@@ -1450,30 +2107,23 @@
                             <line x1="3" y1="18" x2="21" y2="18"/>
                         </svg>
                     </button>
-                    <a href="tel:+4977418086883" class="btn btn-primary btn-sm lg:hidden">
-                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                        </svg>
-                        Anruf
-                    </a>
                 </div>
             </div>
 
             <nav id="mobile-menu" class="mobile-nav" role="navigation" aria-label="Mobile Navigation">
                 <div class="mobile-nav-inner">
                     <a href="#start" class="mobile-nav-link">Start</a>
-                    <a href="#klassen" class="mobile-nav-link">FS-Klassen</a>
+                    <a href="#klassen" class="mobile-nav-link">Führerscheinklassen</a>
                     <a href="#ausbildung" class="mobile-nav-link">Ausbildung</a>
                     <a href="#infos" class="mobile-nav-link">Infos</a>
-                    <a href="#behoerden" class="mobile-nav-link">Behörden-Infos</a>
-                    <a href="https://www.facebook.com/groups/150656274984639/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link flex items-center gap-2">
-                        <svg class="icon-sm" viewBox="0 0 24 24" fill="var(--color-primary-600)" aria-hidden="true">
-                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                    <a href="#behoerden" class="mobile-nav-link">Behörden</a>
+                    <a href="#infos" class="mobile-nav-link mobile-nav-cta">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
                         </svg>
-                        Facebook
+                        Kontakt
                     </a>
-                    <a href="#news" class="mobile-nav-link">NEWS</a>
-                    <a href="#links" class="mobile-nav-link">Links</a>
                 </div>
             </nav>
         </div>
@@ -1485,7 +2135,7 @@
         <section id="start" class="hero" aria-labelledby="hero-heading">
             <div class="hero-content">
                 <h1 id="hero-heading" class="hero-title">Willkommen bei Fahrschule Dorn in Lauchringen</h1>
-                <p class="hero-subtitle">Ihre Ausbildung und Betreuung liegt uns am Herzen – also stehen SIE im Mittelpunkt.</p>
+                <p class="hero-subtitle">Moderne Fahrausbildung mit Verstand und persönlicher Betreuung mit Herz – also stehen SIE im Mittelpunkt.</p>
 
                 <address class="hero-contact">
                     <p>
@@ -1513,196 +2163,475 @@
                     </p>
                 </address>
 
-                <div class="hero-cta">
-                    <a href="#infos" class="btn btn-accent btn-lg">Jetzt anmelden</a>
+                <!-- CTA with positioned slogan -->
+                <div class="hero-cta-wrapper">
+                    <div class="hero-cta">
+                        <a href="#infos" class="btn btn-accent btn-lg">Jetzt anmelden</a>
+                    </div>
+
+                    <!-- Slogan positioned above-right of CTA -->
+                    <figure class="hero-slogan" role="img" aria-label="Mit Herz und Verstand – Fahrschule Dorn">
+                        <div class="hero-slogan-bg" aria-hidden="true"></div>
+                        <svg class="hero-slogan-svg" viewBox="0 0 400 180" aria-hidden="true">
+                            <!-- "Mit" -->
+                            <g id="word-mit">
+                                <path class="draw-path" d="M 20 70 L 20 30 L 35 55 L 50 30 L 50 70" />
+                                <path class="draw-path" d="M 62 45 L 62 70" />
+                                <path class="draw-path" d="M 62 32 L 62 35" />
+                                <path class="draw-path" d="M 78 35 L 78 70 Q 78 75 85 75" />
+                                <path class="draw-path-thin" d="M 70 45 L 86 45" />
+                            </g>
+                            <!-- Heart -->
+                            <g id="heart">
+                                <path class="heart-path" d="M 115 50 C 115 40, 105 30, 95 40 C 85 50, 95 65, 115 80 C 135 65, 145 50, 135 40 C 125 30, 115 40, 115 50 Z" />
+                            </g>
+                            <!-- "Herz" -->
+                            <g id="word-herz">
+                                <path class="draw-path" d="M 160 70 L 160 30 M 160 50 L 180 50 M 180 30 L 180 70" />
+                                <path class="draw-path" d="M 190 55 Q 190 45, 200 45 Q 210 45, 210 55 L 190 55 Q 190 70, 205 70" />
+                                <path class="draw-path" d="M 220 70 L 220 45 M 220 55 Q 225 45, 235 47" />
+                                <path class="draw-path" d="M 245 45 L 265 45 L 245 70 L 265 70" />
+                            </g>
+                            <!-- "und" -->
+                            <g id="word-und">
+                                <path class="draw-path" d="M 55 105 L 55 125 Q 55 135, 70 135 L 70 105" />
+                                <path class="draw-path" d="M 82 135 L 82 115 Q 82 105, 95 105 L 95 135" />
+                                <path class="draw-path" d="M 120 135 Q 107 135, 107 120 Q 107 105, 120 105 M 120 95 L 120 135" />
+                            </g>
+                            <!-- "Verstand" -->
+                            <g id="word-verstand">
+                                <path class="draw-path" d="M 145 95 L 160 135 L 175 95" />
+                                <path class="draw-path" d="M 185 115 Q 185 105, 195 105 Q 205 105, 205 115 L 185 115 Q 185 135, 200 135" />
+                                <path class="draw-path" d="M 215 135 L 215 105 M 215 115 Q 220 105, 230 107" />
+                                <path class="draw-path" d="M 250 108 Q 240 105, 240 115 Q 240 120, 250 122 Q 260 125, 255 135 Q 250 138, 240 135" />
+                                <path class="draw-path" d="M 270 100 L 270 135 Q 270 140, 277 140" />
+                                <path class="draw-path-thin" d="M 262 110 L 278 110" />
+                                <path class="draw-path" d="M 300 135 Q 287 135, 287 120 Q 287 105, 300 105 Q 310 105, 310 115 L 310 135" />
+                                <path class="draw-path" d="M 322 135 L 322 115 Q 322 105, 335 105 L 335 135" />
+                                <path class="draw-path" d="M 360 135 Q 347 135, 347 120 Q 347 105, 360 105 M 360 95 L 360 135" />
+                            </g>
+                            <!-- Underline -->
+                            <path class="draw-path-thin" id="underline" d="M 30 155 Q 100 160, 200 150 Q 300 140, 370 155" />
+                        </svg>
+                        <span class="sr-only">Mit Herz und Verstand – Fahrschule Dorn</span>
+                    </figure>
                 </div>
             </div>
         </section>
+
+        <!-- Partner Teaser: Verkehrsschule Hochrhein -->
+        <section class="section" style="padding-block: var(--space-8);" aria-labelledby="partner-teaser-heading">
+            <div class="container">
+                <div class="partner-teaser fade-in">
+                    <div class="partner-teaser-icon" aria-hidden="true">
+                        <svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        </svg>
+                    </div>
+                    <div class="partner-teaser-content">
+                        <h2 id="partner-teaser-heading" class="partner-teaser-title">
+                            Berufskraftfahrer-Weiterbildung
+                            <span class="badge">Partner</span>
+                        </h2>
+                        <p class="partner-teaser-text">In der Verkehrsschule Hochrhein GbR finden Schulungen im Rahmen der Berufskraftfahrer-Weiterbildung statt.</p>
+                    </div>
+                    <a href="https://www.verkehrsschule-hochrhein.de" target="_blank" rel="noopener noreferrer" class="partner-teaser-btn">
+                        Mehr erfahren
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
 
         <!-- FS-Klassen Section -->
         <section id="klassen" class="section section-alt" aria-labelledby="klassen-heading">
             <div class="container">
                 <div class="section-header fade-in">
                     <h2 id="klassen-heading" class="section-title">Unsere Führerscheinklassen</h2>
-                    <p class="section-subtitle">Wählen Sie die passende Führerscheinklasse für Ihre Bedürfnisse. Wir bieten umfassende Ausbildung mit modernsten Fahrzeugen.</p>
+                    <p class="section-subtitle">Wählen Sie die passende Führerscheinklasse für Ihre Bedürfnisse. Hover oder tippen Sie für Details.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- PKW -->
-                    <article class="card fade-in">
-                        <div class="card-body">
-                            <div class="card-icon" aria-hidden="true">
-                                <svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
-                                    <circle cx="7" cy="17" r="2"/>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Klasse B - PKW -->
+                    <article class="license-card fade-in">
+                        <div class="license-card__header">
+                            <div class="license-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 17h14v-5l-2-4H7l-2 4v5z"/>
+                                    <circle cx="7.5" cy="17" r="1.5"/>
+                                    <circle cx="16.5" cy="17" r="1.5"/>
+                                    <path d="M5 12h14"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="license-card__title">Klasse B</h3>
+                                <p class="license-card__subtitle">PKW bis 3.500 kg</p>
+                            </div>
+                        </div>
+                        <button class="license-card__toggle" aria-expanded="false" aria-label="Details anzeigen">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                        <div class="license-card__tray" role="region" aria-hidden="true">
+                            <div class="license-card__detail">
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">18</div>
+                                    <div class="license-card__stat-label">Mindestalter</div>
+                                </div>
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">14</div>
+                                    <div class="license-card__stat-label">Theorie</div>
+                                </div>
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">12</div>
+                                    <div class="license-card__stat-label">Sonderfahrten</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Klasse BE - PKW mit Anhänger -->
+                    <article class="license-card fade-in">
+                        <div class="license-card__header">
+                            <div class="license-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 15h8v-4l-1.5-3h-5L3 11v4z"/>
+                                    <circle cx="5" cy="15" r="1.5"/>
+                                    <circle cx="9" cy="15" r="1.5"/>
+                                    <rect x="13" y="10" width="8" height="5" rx="0.5"/>
+                                    <circle cx="15.5" cy="15" r="1.5"/>
+                                    <circle cx="18.5" cy="15" r="1.5"/>
+                                    <path d="M11 12.5h2"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="license-card__title">Klasse BE</h3>
+                                <p class="license-card__subtitle">PKW mit Anhänger</p>
+                            </div>
+                        </div>
+                        <button class="license-card__toggle" aria-expanded="false" aria-label="Details anzeigen">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                        <div class="license-card__tray" role="region" aria-hidden="true">
+                            <div class="license-card__detail">
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">18</div>
+                                    <div class="license-card__stat-label">Mindestalter</div>
+                                </div>
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">—</div>
+                                    <div class="license-card__stat-label">Theorie</div>
+                                </div>
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">5</div>
+                                    <div class="license-card__stat-label">Sonderfahrten</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Klasse A - Motorrad unbeschränkt -->
+                    <article class="license-card fade-in">
+                        <div class="license-card__header">
+                            <div class="license-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="5" cy="16" r="3"/>
+                                    <circle cx="19" cy="16" r="3"/>
+                                    <path d="M12 16h4l2-5-6-2-4 4"/>
+                                    <path d="M8 11l4-4h3"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="license-card__title">Klasse A</h3>
+                                <p class="license-card__subtitle">Motorrad unbeschränkt</p>
+                            </div>
+                        </div>
+                        <button class="license-card__toggle" aria-expanded="false" aria-label="Details anzeigen">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                        <div class="license-card__tray" role="region" aria-hidden="true">
+                            <div class="license-card__detail">
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">24</div>
+                                    <div class="license-card__stat-label">Mindestalter</div>
+                                </div>
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">16</div>
+                                    <div class="license-card__stat-label">Theorie</div>
+                                </div>
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">12</div>
+                                    <div class="license-card__stat-label">Sonderfahrten</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Klasse A2 - Motorrad bis 35kW -->
+                    <article class="license-card fade-in">
+                        <div class="license-card__header">
+                            <div class="license-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="5" cy="16" r="3"/>
+                                    <circle cx="19" cy="16" r="3"/>
+                                    <path d="M12 16h4l2-5-6-2-4 4"/>
+                                    <path d="M8 11l4-4h3"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="license-card__title">Klasse A2</h3>
+                                <p class="license-card__subtitle">Motorrad bis 35 kW</p>
+                            </div>
+                        </div>
+                        <button class="license-card__toggle" aria-expanded="false" aria-label="Details anzeigen">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                        <div class="license-card__tray" role="region" aria-hidden="true">
+                            <div class="license-card__detail">
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">18</div>
+                                    <div class="license-card__stat-label">Mindestalter</div>
+                                </div>
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">16</div>
+                                    <div class="license-card__stat-label">Theorie</div>
+                                </div>
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">12</div>
+                                    <div class="license-card__stat-label">Sonderfahrten</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Klasse A1 - Leichtkrafträder -->
+                    <article class="license-card fade-in">
+                        <div class="license-card__header">
+                            <div class="license-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="5" cy="16" r="3"/>
+                                    <circle cx="19" cy="16" r="3"/>
+                                    <path d="M12 16h4l2-5-6-2-4 4"/>
+                                    <path d="M8 11l4-4h3"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="license-card__title">Klasse A1</h3>
+                                <p class="license-card__subtitle">Leichtkrafträder 125ccm</p>
+                            </div>
+                        </div>
+                        <button class="license-card__toggle" aria-expanded="false" aria-label="Details anzeigen">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                        <div class="license-card__tray" role="region" aria-hidden="true">
+                            <div class="license-card__detail">
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">16</div>
+                                    <div class="license-card__stat-label">Mindestalter</div>
+                                </div>
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">16</div>
+                                    <div class="license-card__stat-label">Theorie</div>
+                                </div>
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">12</div>
+                                    <div class="license-card__stat-label">Sonderfahrten</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Klasse AM - Roller -->
+                    <article class="license-card fade-in">
+                        <div class="license-card__header">
+                            <div class="license-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="6" cy="17" r="3"/>
+                                    <circle cx="18" cy="17" r="3"/>
+                                    <path d="M18 14l-3-7h-4l-2 3"/>
+                                    <path d="M6 14h9"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="license-card__title">Klasse AM</h3>
+                                <p class="license-card__subtitle">Roller bis 45 km/h</p>
+                            </div>
+                        </div>
+                        <button class="license-card__toggle" aria-expanded="false" aria-label="Details anzeigen">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                        <div class="license-card__tray" role="region" aria-hidden="true">
+                            <div class="license-card__detail">
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">16</div>
+                                    <div class="license-card__stat-label">Mindestalter</div>
+                                </div>
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">14</div>
+                                    <div class="license-card__stat-label">Theorie</div>
+                                </div>
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">—</div>
+                                    <div class="license-card__stat-label">Sonderfahrten</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Klasse C - LKW -->
+                    <article class="license-card fade-in">
+                        <div class="license-card__header">
+                            <div class="license-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 14h12V6H1v8z"/>
+                                    <path d="M13 8h4l3 3v6h-7V8z"/>
+                                    <circle cx="5" cy="17" r="2"/>
                                     <circle cx="17" cy="17" r="2"/>
                                 </svg>
                             </div>
-                            <h3 class="card-title">PKW Führerschein</h3>
-                            <div class="license-item">
-                                <h4>Klasse B</h4>
-                                <p>Mindestalter: 18 Jahre | Eingeschlossen: AM, L</p>
-                                <p>Kraftfahrzeuge bis 3.500 kg zGM</p>
+                            <div>
+                                <h3 class="license-card__title">Klasse C</h3>
+                                <p class="license-card__subtitle">LKW über 3.500 kg</p>
                             </div>
-                            <div class="license-item">
-                                <h4>Klasse BE</h4>
-                                <p>Mindestalter: 18 Jahre | Voraussetzung: Klasse B</p>
-                                <p>Anhänger bis 3.500 kg zGM</p>
+                        </div>
+                        <button class="license-card__toggle" aria-expanded="false" aria-label="Details anzeigen">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                        <div class="license-card__tray" role="region" aria-hidden="true">
+                            <div class="license-card__detail">
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">21</div>
+                                    <div class="license-card__stat-label">Mindestalter</div>
+                                </div>
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">10</div>
+                                    <div class="license-card__stat-label">Theorie</div>
+                                </div>
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">8</div>
+                                    <div class="license-card__stat-label">Sonderfahrten</div>
+                                </div>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Motorrad -->
-                    <article class="card fade-in">
-                        <div class="card-body">
-                            <div class="card-icon" aria-hidden="true">
-                                <svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="5" cy="17" r="3"/>
-                                    <circle cx="19" cy="17" r="3"/>
-                                    <path d="M9 17h6"/>
-                                    <path d="M19 9c-3 0-4.5 1.5-5 3l-4-5c-.5-.6-1.2-1-2-1H5"/>
-                                    <path d="M14 9l-2-2"/>
+                    <!-- Klasse CE - LKW mit Anhänger -->
+                    <article class="license-card fade-in">
+                        <div class="license-card__header">
+                            <div class="license-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12h7V6H1v6z"/>
+                                    <path d="M8 7h3l2 2v5h-5V7z"/>
+                                    <circle cx="3.5" cy="14" r="1.5"/>
+                                    <circle cx="10.5" cy="14" r="1.5"/>
+                                    <rect x="14" y="8" width="8" height="5" rx="0.5"/>
+                                    <circle cx="16.5" cy="14" r="1.5"/>
+                                    <circle cx="19.5" cy="14" r="1.5"/>
+                                    <path d="M13 10.5h1"/>
                                 </svg>
                             </div>
-                            <h3 class="card-title">Motorrad Führerschein</h3>
-                            <div class="license-item">
-                                <h4>Klasse A</h4>
-                                <p>Mindestalter: 24 Jahre | Unbeschränkte Motorräder</p>
+                            <div>
+                                <h3 class="license-card__title">Klasse CE</h3>
+                                <p class="license-card__subtitle">LKW mit Anhänger</p>
                             </div>
-                            <div class="license-item">
-                                <h4>Klasse A2</h4>
-                                <p>Mindestalter: 18 Jahre | Bis 35 kW Leistung</p>
-                            </div>
-                            <div class="license-item">
-                                <h4>Klasse A1</h4>
-                                <p>Mindestalter: 16 Jahre | Leichtkrafträder bis 125 cm³</p>
-                            </div>
-                            <div class="license-item">
-                                <h4>Klasse AM</h4>
-                                <p>Mindestalter: 16 Jahre | Roller bis 45 km/h</p>
+                        </div>
+                        <button class="license-card__toggle" aria-expanded="false" aria-label="Details anzeigen">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                        <div class="license-card__tray" role="region" aria-hidden="true">
+                            <div class="license-card__detail">
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">21</div>
+                                    <div class="license-card__stat-label">Mindestalter</div>
+                                </div>
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">6</div>
+                                    <div class="license-card__stat-label">Theorie</div>
+                                </div>
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">8</div>
+                                    <div class="license-card__stat-label">Sonderfahrten</div>
+                                </div>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Mofa/Roller -->
-                    <article class="card fade-in">
-                        <div class="card-body">
-                            <div class="card-icon" aria-hidden="true">
-                                <svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="6" cy="17" r="3"/>
-                                    <circle cx="18" cy="17" r="3"/>
-                                    <path d="M6 14V9a2 2 0 0 1 2-2h3a2 2 0 0 1 1.83 1.17L15 14"/>
-                                    <path d="M15 14V7"/>
-                                    <path d="M15 7h3"/>
+                    <!-- Klasse D - Bus -->
+                    <article class="license-card fade-in">
+                        <div class="license-card__header">
+                            <div class="license-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="6" width="18" height="11" rx="2"/>
+                                    <circle cx="7" cy="17" r="2"/>
+                                    <circle cx="17" cy="17" r="2"/>
+                                    <path d="M3 11h18"/>
+                                    <path d="M7 6v5M12 6v5M17 6v5"/>
                                 </svg>
                             </div>
-                            <h3 class="card-title">Kleinkrafträder & Mofa</h3>
-                            <div class="license-item">
-                                <h4>Roller (Klasse AM)</h4>
-                                <p>Mindestalter: 16 Jahre | Bis 45 km/h, 50 cm³</p>
+                            <div>
+                                <h3 class="license-card__title">Klasse D</h3>
+                                <p class="license-card__subtitle">Bus mit 8+ Sitzen</p>
                             </div>
-                            <div class="license-item">
-                                <h4>Mofa</h4>
-                                <p>Mindestalter: 15 Jahre | Bis 25 km/h, 50 cm³</p>
-                            </div>
-                            <div class="license-item">
-                                <h4>Führerschein mit 17 (BF17)</h4>
-                                <p>Mindestalter: 17 Jahre | Begleitetes Fahren</p>
+                        </div>
+                        <button class="license-card__toggle" aria-expanded="false" aria-label="Details anzeigen">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                        <div class="license-card__tray" role="region" aria-hidden="true">
+                            <div class="license-card__detail">
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">24</div>
+                                    <div class="license-card__stat-label">Mindestalter</div>
+                                </div>
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">18</div>
+                                    <div class="license-card__stat-label">Theorie</div>
+                                </div>
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">22</div>
+                                    <div class="license-card__stat-label">Sonderfahrten</div>
+                                </div>
                             </div>
                         </div>
                     </article>
 
-                    <!-- LKW -->
-                    <article class="card fade-in">
-                        <div class="card-body">
-                            <div class="card-icon" aria-hidden="true">
-                                <svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M1 3h15v13H1z"/>
-                                    <path d="M16 8h4l3 3v5h-7V8z"/>
-                                    <circle cx="5.5" cy="18.5" r="2.5"/>
-                                    <circle cx="18.5" cy="18.5" r="2.5"/>
-                                </svg>
-                            </div>
-                            <h3 class="card-title">LKW Führerschein</h3>
-                            <div class="license-item">
-                                <h4>Klasse C</h4>
-                                <p>Mindestalter: 18 Jahre | LKW über 3.500 kg zGM</p>
-                            </div>
-                            <div class="license-item">
-                                <h4>Klasse CE</h4>
-                                <p>Mindestalter: 18 Jahre | LKW mit Anhänger</p>
-                            </div>
-                            <div class="license-item">
-                                <h4>Klasse C1 / C1E</h4>
-                                <p>Mindestalter: 18 Jahre | LKW bis 7.500 kg zGM</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Bus -->
-                    <article class="card fade-in">
-                        <div class="card-body">
-                            <div class="card-icon" aria-hidden="true">
-                                <svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M8 6v6"/>
-                                    <path d="M16 6v6"/>
-                                    <path d="M2 12h20"/>
-                                    <path d="M7 18H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
-                                    <circle cx="7" cy="18" r="2"/>
-                                    <circle cx="17" cy="18" r="2"/>
-                                    <path d="M11 18h2"/>
-                                </svg>
-                            </div>
-                            <h3 class="card-title">Bus Führerschein</h3>
-                            <div class="license-item">
-                                <h4>Klasse D</h4>
-                                <p>Mindestalter: 24 Jahre | Busse mit mehr als 8 Sitzplätzen</p>
-                            </div>
-                            <div class="license-item">
-                                <h4>Klasse DE</h4>
-                                <p>Mindestalter: 24 Jahre | Busse mit Anhänger</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Traktor -->
-                    <article class="card fade-in">
-                        <div class="card-body">
-                            <div class="card-icon" aria-hidden="true">
-                                <svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="7" cy="17" r="4"/>
-                                    <circle cx="19" cy="17" r="2"/>
-                                    <path d="M3 17V9a2 2 0 0 1 2-2h4l3 4h7a2 2 0 0 1 2 2v4"/>
+                    <!-- Klasse T - Traktor -->
+                    <article class="license-card fade-in">
+                        <div class="license-card__header">
+                            <div class="license-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="7" cy="15" r="4"/>
+                                    <circle cx="18" cy="17" r="2"/>
+                                    <path d="M11 15h5l2-6H8l-1 2"/>
                                     <path d="M14 9v2"/>
                                 </svg>
                             </div>
-                            <h3 class="card-title">Traktor & Landwirtschaft</h3>
-                            <div class="license-item">
-                                <h4>Klasse T</h4>
-                                <p>Mindestalter: 16-18 Jahre | Zugmaschinen bis 60 km/h</p>
-                                <p>16-18 Jahre: beschränkt auf 40 km/h</p>
+                            <div>
+                                <h3 class="license-card__title">Klasse T</h3>
+                                <p class="license-card__subtitle">Land-/Forstwirtschaft</p>
                             </div>
                         </div>
-                    </article>
-
-                    <!-- Sonderkurse -->
-                    <article class="card fade-in">
-                        <div class="card-body">
-                            <div class="card-icon" aria-hidden="true">
-                                <svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-                                </svg>
-                            </div>
-                            <h3 class="card-title">Sonderkurse & Weiterbildung</h3>
-                            <div class="license-item">
-                                <h4>BKFQG</h4>
-                                <p>Berufskraftfahrer-Qualifikationsgesetz</p>
-                                <p>Grundqualifikation & Weiterbildung</p>
-                            </div>
-                            <div class="license-item">
-                                <h4>Punkte-Tilgungs-Kurse</h4>
-                                <p>Fahreignungs-Seminar (FES) | Aufbauseminar (ASF)</p>
+                        <button class="license-card__toggle" aria-expanded="false" aria-label="Details anzeigen">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                        <div class="license-card__tray" role="region" aria-hidden="true">
+                            <div class="license-card__detail">
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">16</div>
+                                    <div class="license-card__stat-label">Mindestalter</div>
+                                </div>
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">12</div>
+                                    <div class="license-card__stat-label">Theorie</div>
+                                </div>
+                                <div class="license-card__stat">
+                                    <div class="license-card__stat-value">—</div>
+                                    <div class="license-card__stat-label">Sonderfahrten</div>
+                                </div>
                             </div>
                         </div>
                     </article>
@@ -1719,6 +2648,25 @@
                         <p>Bei uns steht Ihre persönliche Betreuung im Vordergrund. Wir passen die Ausbildung an Ihre Bedürfnisse an und begleiten Sie bis zum erfolgreichen Führerschein.</p>
                         <p>Unsere erfahrenen Fahrlehrer vermitteln nicht nur das nötige Wissen, sondern auch die Sicherheit für den Straßenverkehr.</p>
                         <a href="#infos" class="btn btn-primary mt-6">Mehr erfahren</a>
+
+                        <!-- Partner Link: BKF-Weiterbildung -->
+                        <a href="https://www.verkehrsschule-hochrhein.de" target="_blank" rel="noopener noreferrer" class="partner-teaser-compact">
+                            <div class="partner-icon" aria-hidden="true">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                                </svg>
+                            </div>
+                            <div class="partner-text">
+                                <strong>Berufskraftfahrer?</strong> In der Verkehrsschule Hochrhein GbR finden Schulungen im Rahmen der BKF-Weiterbildung statt.
+                            </div>
+                            <span class="partner-link">
+                                Mehr
+                                <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <polyline points="9 18 15 12 9 6"/>
+                                </svg>
+                            </span>
+                        </a>
                     </div>
                     <div class="ausbildung-image fade-in">
                         <img src="assets/images/ausbildung.webp" alt="Fahrlehrer gibt Fahrschülerin Anweisungen im Auto" width="800" height="533" loading="lazy" decoding="async">
@@ -1942,6 +2890,31 @@
         </div>
         <div class="container">
             <div class="footer-main">
+                <!-- Partner Section: Verkehrsschule Hochrhein -->
+                <div class="footer-partner">
+                    <div class="footer-partner-icon" aria-hidden="true">
+                        <svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        </svg>
+                    </div>
+                    <div class="footer-partner-content">
+                        <h3 class="footer-partner-title">
+                            Berufskraftfahrer-Weiterbildung
+                            <span class="badge">Partner</span>
+                        </h3>
+                        <p class="footer-partner-text">In der Verkehrsschule Hochrhein GbR finden Schulungen im Rahmen der Berufskraftfahrer-Weiterbildung statt.</p>
+                    </div>
+                    <a href="https://www.verkehrsschule-hochrhein.de" target="_blank" rel="noopener noreferrer" class="footer-partner-btn">
+                        Zur Verkehrsschule
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                    </a>
+                </div>
+
                 <div class="footer-grid">
                     <!-- Brand Section -->
                     <div class="footer-brand">
@@ -1973,10 +2946,10 @@
                         <h3>Schnelllinks</h3>
                         <ul class="footer-links">
                             <li><a href="#start">Start</a></li>
-                            <li><a href="#klassen">FS-Klassen</a></li>
+                            <li><a href="#klassen">Führerscheinklassen</a></li>
                             <li><a href="#ausbildung">Ausbildung</a></li>
-                            <li><a href="#infos">Kontakt</a></li>
-                            <li><a href="#behoerden">Behörden-Infos</a></li>
+                            <li><a href="#infos">Infos & Kontakt</a></li>
+                            <li><a href="#behoerden">Behörden</a></li>
                         </ul>
                     </nav>
 
@@ -2048,6 +3021,13 @@
             </div>
         </div>
     </footer>
+
+    <!-- Sticky Phone Button for Mobile -->
+    <a href="tel:+4977418086883" class="sticky-phone-btn" aria-label="Jetzt anrufen: 07741 - 80 86 83">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+    </a>
 
     <script>
         (() => {
@@ -2127,6 +3107,58 @@
                 // Fallback für Browser ohne IntersectionObserver
                 fadeElements.forEach(el => el.classList.add('visible'));
             }
+
+            // Hero Slogan SVG Stroke Draw Animation (Mit Herz und Verstand)
+            const heroSloganSvg = document.querySelector('.hero-slogan-svg');
+            let sloganAnimated = false;
+
+            if (heroSloganSvg) {
+                // Calculate and set path lengths for each path element
+                const paths = heroSloganSvg.querySelectorAll('.draw-path, .draw-path-thin, .heart-path');
+                paths.forEach(path => {
+                    try {
+                        const length = path.getTotalLength();
+                        path.style.setProperty('--path-length', length);
+                    } catch (e) {
+                        path.style.setProperty('--path-length', 150);
+                    }
+                });
+
+                // Trigger animation on page load with slight delay
+                setTimeout(() => {
+                    if (!sloganAnimated) {
+                        sloganAnimated = true;
+                        heroSloganSvg.classList.add('animate');
+                    }
+                }, 800);
+            }
+
+            // License Card Toggle (Mobile tap-to-expand)
+            document.querySelectorAll('.license-card__toggle').forEach(button => {
+                button.addEventListener('click', () => {
+                    const card = button.closest('.license-card');
+                    const tray = card.querySelector('.license-card__tray');
+                    const isActive = card.classList.toggle('is-active');
+
+                    button.setAttribute('aria-expanded', isActive);
+                    button.setAttribute('aria-label', isActive ? 'Details ausblenden' : 'Details anzeigen');
+                    tray.setAttribute('aria-hidden', !isActive);
+                });
+            });
+
+            // License Card Keyboard Navigation
+            document.querySelectorAll('.license-card').forEach(card => {
+                card.setAttribute('tabindex', '0');
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        const button = card.querySelector('.license-card__toggle');
+                        if (button && window.innerWidth < 768) {
+                            button.click();
+                        }
+                    }
+                });
+            });
         })();
     </script>
 </body>
